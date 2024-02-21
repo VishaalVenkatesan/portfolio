@@ -12,6 +12,8 @@ module.exports = {
       fontFamily: {
         carlson : ['Carlson', 'sans-serif'],
         serif : ['PT-Serif', 'serif'],  
+        mutuka: ['Mukta', 'sans-serif'],
+        lora: ['Lora','serif'],
       },
     },
     screens: {

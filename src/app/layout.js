@@ -12,7 +12,7 @@ title:{
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="">
+      <body className="lg:pl-[70px] sm:pl-[12px] ">
         <div className="container">  
         <Navbar/>
       {children}
