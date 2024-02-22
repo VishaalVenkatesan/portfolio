@@ -26,7 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="pb-[100px] md:pb-[1px]">
+    <div className="pb-[70px] md:pb-[1px]">
     <motion.div
     style={{
       position: "fixed",
@@ -92,13 +92,13 @@ const Navbar = () => {
               Contact
             </li>
           </Link>
-                <Link
-                  href="/resume"
-                  scroll={false}
-                >
+                <Link legacyBehavior href="https://docs.google.com/document/d/e/2PACX-1vTsE1X1gCiak25rRwtwki9QWYYCKU9XOKHW2NCZaIaLYgZR9s-qMQJiflTZ6CY1Z_L1EZDKvr_PEyfJ/pub"
+                  scroll={false}>
+                  <a target="_blank" rel="noopener noreferrer">
                   <li className="ml-10 text-sm uppercase hover:border-b hover:border-black hover:border-solid">
                     Resume
                   </li>
+                  </a>
                 </Link>
         </ul>
         <div className="z-10 flex items-center flex-1 sm:hidden">
@@ -164,13 +164,13 @@ const Navbar = () => {
                     Contact
                   </li>
                 </Link>
-                <Link
-                  href="/resume"
-                  scroll={false}
-                >
+                <Link legacyBehavior  href="https://docs.google.com/document/d/e/2PACX-1vTsE1X1gCiak25rRwtwki9QWYYCKU9XOKHW2NCZaIaLYgZR9s-qMQJiflTZ6CY1Z_L1EZDKvr_PEyfJ/pub"
+                  scroll={false}>
+                  <a target="_blank" rel="noopener noreferrer">
                   <li className="ml-2 mb-4 text-sm text-[20px] uppercase hover:border-b">
                     Resume
                   </li>
+                  </a>
                 </Link>
               </ul>
             </div>
