@@ -36,7 +36,7 @@ const About = () => {
           <motion.div animate={controlsText}>
             <h1 className="font-serif text-5xl mb-7">little bit about me</h1>
             <div className='text-balance'>
-              <p className="mb-4 text-xl font-normal text-gray-700 font-lora p-[3px] leading-8">
+              <p className="mb-4 text-2xl font-normal text-gray-700 font-lora p-[3px] leading-8">
                 Hi! I'm Vishaal Venkatesan, a 3rd-year student at Manipal University Jaipur, pursuing my
                 Bachelor of Technology in Computer Science. Stemming from my passion for photography, 
                 I have a keen interest in creating aesthetically pleasing front-end web designs using
