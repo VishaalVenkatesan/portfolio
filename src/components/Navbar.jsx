@@ -101,7 +101,7 @@ const Navbar = () => {
                   </a>
                 </Link>
         </ul>
-        <div className="z-10 flex items-center flex-1 sm:hidden">
+        <div className="z-10 flex items-center flex-1 md:hidden">
           <Image
             src={toggle ? close : menu}
             alt="menu"

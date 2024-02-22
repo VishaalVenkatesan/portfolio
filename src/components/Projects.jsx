@@ -32,7 +32,7 @@ const Projects = () => {
       }, []);
 
   return (
-    <section id="projects" className="w-full md:h-screen  relative">
+    <section id="projects" className="w-full md:h-screen  relative pt-[40px] sm:pt-[2px]">
       <h1 className='font-serif text-5xl mb-7'>projects i made</h1>
       <div className='flex justify-center items-center'>
         <div className='sm:grid sm:grid-cols-2 gap-2 sm:gap-4 flex flex-col'>

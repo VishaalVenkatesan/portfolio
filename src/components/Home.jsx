@@ -28,7 +28,7 @@ const Home = () => {
               className="opacity-15 accent-slate-100"
             />
           </div>
-          <div className="text-7xl font-normal font-serif pt-5 sm:pt-[1px] pl-[15px]">
+          <div className="text-6xl font-normal font-serif pt-10 sm:pt-[1px] pl-[15px]">
         <Typewriter 
          onInit={(typewriter) => { 
            typewriter.typeString("Vishaal is a Software Developer based in Bengaluru. He is fueled by simplicity, ikea plants, and the world. Studying CS in MUJ.") 

@@ -30,9 +30,9 @@ const About = () => {
   }, [controlsImage, controlsText]);
 
   return (
-    <section id="about" className="w-full md:h-screen">
+    <section id="about" className="w-full md:h-screen pt-[40px] sm:pt-[2px]">
       <div className="flex flex-col items-center justify-between h-full sm:flex-row ">
-        <div className="flex flex-col w-full px-2 sm:w-1/2">
+        <div className="flex flex-col w-full px-2 md:w-1/2">
           <motion.div animate={controlsText}>
             <h1 className="font-serif text-5xl mb-7">little bit about me</h1>
             <div className='text-balance'>
@@ -53,13 +53,13 @@ const About = () => {
             </div>
           </motion.div>
         </div>
-        <motion.div animate={controlsImage} className="w-full sm:w-1/2">
+        <motion.div animate={controlsImage} className="w-full md:w-1/2">
           <Image
             src={vishaal}
             alt="myPhoto"
             width={400}
             height={300}
-            className="rounded-[30px] sm:ml-[200px]"
+            className="rounded-[30px] md:ml-[200px] sm:ml-[50px]"
           />
         </motion.div>
       </div>

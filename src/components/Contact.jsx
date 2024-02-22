@@ -58,12 +58,12 @@ const Contact = () => {
                   <div className="flex flex-col gap-y-[20px]">
                     <h1 className='text-3xl font-semibold font-lora text-pretty'>Vishaal Venkatesan.</h1>
                     <h1 className='text-2xl font-semibold font-lora text-pretty'>Developer | Student</h1>
-                    <h1 className='text-xl font-lora text-pretty'>Contact me to work together on a freelance project. <br></br> I am also available for 
+                    <h1 className='text-xl font-lora text-pretty justify-center'>Contact me to work together on a freelance project. <br></br> I am also available for 
                       full-time positions.
                     </h1>
                   </div>
                 </div>
-                <div className="flex flex-row justify-end space-x-4">
+                <div className="flex flex-row justify-center pt-[40px] space-x-4">
                   <Link legacyBehavior href="https://www.linkedin.com/in/vishaalvenkatesan/">
                     <a target="_blank" rel="noopener noreferrer">
                       <Image src={linkedin} alt="linkedin"  width={50} height={50}/>
