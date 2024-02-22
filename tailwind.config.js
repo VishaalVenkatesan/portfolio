@@ -14,6 +14,7 @@ module.exports = {
         serif : ['PT-Serif', 'serif'],  
         mutuka: ['Mukta', 'sans-serif'],
         lora: ['Lora','serif'],
+        poppins:['Poppins','sans-serif'],
       },
     },
     screens: {
