@@ -53,8 +53,6 @@ const About = () => {
                 <Link href="/gallery" className="text-blue-900  text-2xl">
                   <u>here</u>.
                 </Link>{" "}
-                Since I was a kid, I have really enjoyed motorsport of any kind and continue to do so
-                to this day.
                 </p>
             </div>
           </motion.div>
