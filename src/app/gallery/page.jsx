@@ -26,7 +26,7 @@ const page = () => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const viewportWidth = window.innerWidth;
-      
+      if(viewportWidth <= 1060){
         if (scrollY > 0) {
           controls.start(index => ({
             x: index % 2 === 0 ? 0 : 0,
@@ -41,6 +41,7 @@ const page = () => {
           }));
         
       }
+    }
     };
   
     window.addEventListener('scroll', handleScroll);
