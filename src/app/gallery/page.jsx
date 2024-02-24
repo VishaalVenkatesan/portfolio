@@ -37,7 +37,7 @@ const page = () => {
           controls.start(index => ({
             x: index % 2 === 0 ? '100vw' : '-100vw',
             opacity: 0,
-            transition: { duration: 3 }
+            transition: { duration: 2 }
           }));
         
       }
