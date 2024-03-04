@@ -30,8 +30,8 @@ const About = () => {
   }, [controlsImage, controlsText]);
 
   return (
-    <section id="about" className="w-full md:h-screen pt-[40px] sm:pt-[2px]">
-      <div className="flex flex-col items-center justify-between h-full sm:flex-row ">
+    <section id="about" className="w-full md:h-screen pt-[40px] md:pt-[2px]">
+      <div className="flex flex-col items-center justify-between h-full md:flex-row ">
         <div className="flex flex-col w-full px-2 md:w-1/2">
           <motion.div animate={controlsText}>
             <h1 className="font-serif text-5xl mb-7">little bit about me</h1>
@@ -50,7 +50,7 @@ const About = () => {
                   and I continue to enjoy them to this day.
                   Moreover, I've honed my skills in photography, capturing moments that inspire me. 
                  If you're interested, you can check out some of my work {" "} 
-                <Link href="/gallery" className="text-blue-900  text-2xl">
+                <Link href="/gallery" className="text-2xl text-blue-900">
                   <u>here</u>.
                 </Link>{" "}
                 </p>

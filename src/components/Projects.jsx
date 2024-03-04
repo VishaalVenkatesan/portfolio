@@ -41,7 +41,7 @@ const Projects = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1060);
     };
     
     handleResize();
@@ -52,20 +52,19 @@ const Projects = () => {
     };
       }, []);
       const imageStyle = {
-        borderRadius: '10%',
         border: '2px solid black',
       }
       return (
-        <section id="projects" className="w-full md:h-screen relative pt-[40px] sm:pt-[2px]">
-          <h1 className='font-serif text-5xl mb-10'>projects i made</h1>
-          <div className='flex justify-center items-center'>
-            <div className='sm:grid sm:grid-cols-2 gap-4 sm:gap-[130px] flex flex-col'>
+        <section id="projects" className="w-full md:h-screen relative pt-[40px] md:pt-[2px]">
+          <h1 className='mb-10 font-serif text-5xl'>projects i made</h1>
+          <div className='flex items-center justify-center'>
+            <div className='md:grid md:grid-cols-2 gap-4 sm:gap-[130px] flex flex-col'>
               {items.map(item => (
                 <motion.div
                   key={item.id}
                   onClick={() => handleClick(item)}
-                  className="relative cursor-pointer transition-all duration-200 overflow-hidden"
-                  style={{ width: isMobile ? 350 : 400, height: isMobile ? 200 : 250 }}
+                  className="relative overflow-hidden transition-all duration-200 cursor-pointer"
+                  style={{ width: isMobile ? 370 : 400, height: isMobile ? 250 : 250 }}
                 >
                   <Image src={item.source} alt={item.title} layout="fill" objectFit="cover" style={imageStyle}/>
                 </motion.div>
@@ -74,23 +73,24 @@ const Projects = () => {
           </div>
           {selectedItem && (
             <>
-              <div className="fixed inset-0 bg-black opacity-70 z-10"></div>
+              <div className="fixed inset-0 z-10 bg-black opacity-70"></div>
               <motion.div
                 layoutId={selectedItem.id}
-                className={`fixed ${isMobile ? 'top-[10%] left-[7%] w-[70%] h-[70%]' : 'top-[30%] left-[27%] w-[500px] h-[400px]'} transform -translate-x-1/2 -translate-y-1/2 z-20 text-2xl text-black bg-gray-200 rounded-[30px] 
+                className={`fixed ${isMobile ? 'top-[10%]  left-[7%] w-[70%]' : 'top-[30%] left-[27%] w-[500px]'} transform -translate-x-1/2 -translate-y-1/2 z-20 text-2xl text-black bg-gray-200 rounded-[30px] 
                 cursor-pointer hover:bg-gray-300 p-[20px] m-[40px]`}
                 onClick={() => setSelectedItem(null)}
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.5 }}
                 transition={{ duration: 0.3 }}
+                style={{ height: 'auto' }} 
               >
                 <div className='flex flex-col justify-between h-full pb-4'>
                   <div className=''>
                     <motion.h2 className='font-serif text-4xl md:text-5xl pb-[10px]' >{selectedItem.title}</motion.h2>
                     <motion.p className='font-popins text-[20px]'>{selectedItem.info}</motion.p>
                     <div className='flex justify-center pt-[25px]'>
-                      <motion.p className='font-lora text-center bg-black text-white px-4 text-xl py-2 rounded-full'>{selectedItem.stack}</motion.p>
+                      <motion.p className='px-4 py-2 text-xl text-center text-white bg-black rounded-full font-lora'>{selectedItem.stack}</motion.p>
                     </div>
                   </div>
                   <a href={selectedItem.link} target="_blank" rel="noopener noreferrer"

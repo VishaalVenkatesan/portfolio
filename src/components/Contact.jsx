@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from 'react';
+import {useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import github from "../assets/github.png"
 import linkedin from "../assets/linkedin.png" 
@@ -13,7 +13,7 @@ const Contact = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      if (scrollY > 0) {
+      if (scrollY > 0)  {
         controls.start({ x: 0, opacity: 1, transition: { duration: 1 } });
       }else{
         controls.start({ x: '-100vw', opacity: 0, transition: { duration: 1 } });
@@ -31,11 +31,11 @@ const Contact = () => {
     <section id="contact" className="w-full md:h-screen pt-[40px]">
       <motion.section animate={controls}>
         <div>
-          <div className="flex flex-col gap-6 md:flex-row">
+          <div className="flex flex-col gap-8 md:flex-row">
             <div className='w-full md:w-3/4'>
               <div className='w-full h-full p-8 bg-white rounded-[30px]'>
                 <div className='font-serif text-4xl mb-7'>thanks for snapping a look. Let's get in touch!</div>
-                <form action="https://getform.io/f/negAA9bw" method="POST" className="flex flex-col gap-8 sm:grid-cols-2 sm:grid">
+                <form action="https://getform.io/f/negAA9bw" method="POST" className="flex flex-col gap-8 sm:grid-cols-2 sm:grid p-7">
                   <style jsx>{`
                     ::placeholder {
                       color: gray;
@@ -58,7 +58,7 @@ const Contact = () => {
                   <div className="flex flex-col gap-y-[20px]">
                     <h1 className='text-3xl font-semibold font-lora text-pretty'>Vishaal Venkatesan.</h1>
                     <h1 className='text-2xl font-semibold font-lora text-pretty'>Developer | Student</h1>
-                    <h1 className='text-xl font-lora text-pretty justify-center'>Contact me to work together on a freelance project. <br></br> I am also available for 
+                    <h1 className='justify-center text-xl font-lora text-pretty'>Contact me to work together on a freelance project. <br></br> I am also available for 
                       full-time positions.
                     </h1>
                   </div>
