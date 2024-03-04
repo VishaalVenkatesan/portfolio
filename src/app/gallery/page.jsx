@@ -23,7 +23,7 @@ const page = () => {
   return (
     <div className="pl-[0px] md:pl-[30px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-[100px] gap-y-[60px] md:pt-[100px] pt-[30px]">
       {images.map((image, index) => (
-          <Image src={image} width={400} height={400} objectFit="cover" style={imageStyle}/>
+          <Image src={image} width={400} height={400}  style={imageStyle}/>
       
       ))}
     </div>
