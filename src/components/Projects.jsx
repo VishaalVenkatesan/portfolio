@@ -94,7 +94,7 @@ const Projects = () => {
                     </div>
                   </div>
                   <a href={selectedItem.link} target="_blank" rel="noopener noreferrer"
-                    className='mt-auto flex text-blue-500 font-serif text-[20px] justify-center items-center'>source code</a>
+                    className='mt-[10px] flex text-blue-500 font-serif text-[20px] justify-center items-center'>source code</a>
                 </div>
               </motion.div>
             </>
