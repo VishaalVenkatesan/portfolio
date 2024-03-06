@@ -28,7 +28,7 @@ const Contact = () => {
   }, [controls]);
 
   return (
-    <section id="contact" className="w-full md:h-screen pt-[40px]">
+    <section id="contact" className="w-full md:h-screen pt-[100px]">
       <motion.section animate={controls}>
         <div>
           <div className="flex flex-col gap-8 md:flex-row">

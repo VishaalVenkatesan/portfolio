@@ -10,6 +10,7 @@ import Image from "next/image"
 const Projects = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [gradient, setGradient] = useState(false); 
 
 
   const items = [
@@ -34,11 +35,10 @@ const Projects = () => {
       link:"https://github.com/VishaalVenkatesan/portfolio",
     source: portfolio,},
   ];
-
   const handleClick = (item) => {
     setSelectedItem(selectedItem !== item ? item : null);
+    setGradient(selectedItem !== item); 
   };
-
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1060);
@@ -56,37 +56,46 @@ const Projects = () => {
         borderRadius: '30px',
       }
       return (
-        <section id="projects" className="w-full md:h-screen relative pt-[40px] md:pt-[20px]">
-          <h1 className='mb-10 font-serif text-5xl'>projects</h1>
-          <div className='bg-proj w-100% h-100% p-[90px] rounded-[30px] transform transition-transform duration-500 hover:scale-105'>
+        <section id="projects" className="w-full md:h-screen relative pt-[40px] md:pt-[20px] ">
+          <h1 className='mb-10 font-serif text-5xl weight-600'>projects</h1>
+          <div className='bg-dimBlue w-100% h-80% p-[50px] rounded-[30px] md:ml-[80px]'>
           <div className='flex items-center justify-center'>
             <div className='md:grid md:grid-cols-2 gap-4 sm:gap-[130px] flex flex-col'>
               {items.map(item => (
                 <motion.div
                   key={item.id}
-                  onClick={() => handleClick(item)}
+                  onClick={() => {
+                    handleClick(item)
+                  setGradient(false);
+                  }}
                   className="relative overflow-hidden transition-all duration-200 cursor-pointer"
-                  style={{ width: isMobile ? 370 : 400, height: isMobile ? 250 : 250 }}
+                  style={{
+                     width: isMobile ? 350 : 400, 
+                    height: isMobile ? 200 : 250 ,   
+
+                  }}
                 >
-                  <Image src={item.source} alt={item.title} layout="fill" objectFit="cover" style={imageStyle}/>
+                  <Image src={item.source} alt={item.title}  style={imageStyle}/>
                 </motion.div>
               ))}
             </div>
           </div>
+          </div>
           {selectedItem && (
             <>
             
-              <motion.div
-                layoutId={selectedItem.id}
-                className={`fixed ${isMobile ? 'top-[10%]  left-[7%] w-[70%]' : 'top-[30%] left-[27%] w-[500px]'} transform -translate-x-1/2 -translate-y-1/2 z-20 text-2xl text-black bg-gray-200 rounded-[30px] 
-                cursor-pointer hover:bg-gray-300 p-[20px] m-[40px]`}
-                onClick={() => setSelectedItem(null)}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.5 }}
-                transition={{ duration: 0.3 }}
-                style={{ height: 'auto' }} 
-              >
+            <div className="fixed inset-0 flex items-center justify-center">
+                <motion.div
+                    layoutId={selectedItem.id}
+                    className={`z-20 text-2xl text-black bg-gray-200 rounded-[30px] cursor-pointer hover:bg-gray-300 p-[20px] m-[40px] ${isMobile ? 'w-[70%]' : 'w-[500px]'}`}
+                    onClick={() => setSelectedItem(null)}
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.5 }}
+                    transition={{ duration: 0.3 }}
+                    style={{ height: 'auto' }} 
+                >
+            
                 <div className='flex flex-col justify-between h-full pb-4'>
                   <div className=''>
                     <motion.h2 className='font-serif text-4xl md:text-5xl pb-[10px]' >{selectedItem.title}</motion.h2>
@@ -99,10 +108,10 @@ const Projects = () => {
                     className='mt-[10px] flex text-blue-500 font-serif text-[20px] justify-center items-center'>source code</a>
                 </div>
               </motion.div>
+              </div>
               
             </>
           )}
-          </div>
         </section>
       );
     };
