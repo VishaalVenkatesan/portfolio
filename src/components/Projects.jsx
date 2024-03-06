@@ -52,11 +52,13 @@ const Projects = () => {
     };
       }, []);
       const imageStyle = {
-        border: '2px solid black',
+        border: '2px solid white',
+        borderRadius: '30px',
       }
       return (
-        <section id="projects" className="w-full md:h-screen relative pt-[40px] md:pt-[2px]">
-          <h1 className='mb-10 font-serif text-5xl'>projects i made</h1>
+        <section id="projects" className="w-full md:h-screen relative pt-[40px] md:pt-[20px]">
+          <h1 className='mb-10 font-serif text-5xl'>projects</h1>
+          <div className='bg-proj w-100% h-100% p-[90px] rounded-[30px] transform transition-transform duration-500 hover:scale-105'>
           <div className='flex items-center justify-center'>
             <div className='md:grid md:grid-cols-2 gap-4 sm:gap-[130px] flex flex-col'>
               {items.map(item => (
@@ -73,7 +75,7 @@ const Projects = () => {
           </div>
           {selectedItem && (
             <>
-              <div className="fixed inset-0 z-10 bg-black opacity-70"></div>
+            
               <motion.div
                 layoutId={selectedItem.id}
                 className={`fixed ${isMobile ? 'top-[10%]  left-[7%] w-[70%]' : 'top-[30%] left-[27%] w-[500px]'} transform -translate-x-1/2 -translate-y-1/2 z-20 text-2xl text-black bg-gray-200 rounded-[30px] 
@@ -97,8 +99,10 @@ const Projects = () => {
                     className='mt-[10px] flex text-blue-500 font-serif text-[20px] justify-center items-center'>source code</a>
                 </div>
               </motion.div>
+              
             </>
           )}
+          </div>
         </section>
       );
     };
