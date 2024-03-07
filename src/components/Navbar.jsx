@@ -58,7 +58,7 @@ const Navbar = () => {
       </Link>
 
       <div className="justify-between font-carlson ">
-        <ul style={{ color: "black" }} className="justify-end hidden md:flex ">
+        <ul style={{ color: "black" }} className="justify-end hidden lg:flex ">
           <Link href="/#home" scroll={false} onClick={() => handleClick("home")}>
             <li className="text-sm uppercase hover:border-b hover:border-black hover:border-solid">Home</li>
           </Link>
@@ -101,7 +101,7 @@ const Navbar = () => {
                   </a>
                 </Link>
         </ul>
-        <div className="z-10 flex items-center flex-1 md:hidden">
+        <div className="z-10 flex items-center flex-1 lg:hidden">
           <Image
             src={toggle ? close : menu}
             alt="menu"

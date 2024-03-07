@@ -63,7 +63,7 @@ const About = () => {
             alt="myPhoto"
             width={400}
             height={300}
-            className="rounded-[30px] md:ml-[200px] sm:ml-[50px]"
+            className="rounded-[30px] md:ml-[100px] sm:ml-[50px] justify-between"
           />
         </motion.div>
       </div>
