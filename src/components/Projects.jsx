@@ -52,13 +52,13 @@ const Projects = () => {
     };
       }, []);
       const imageStyle = {
-        border: '2px solid white',
+        border: '2px solid black',
         borderRadius: '30px',
       }
       return (
         <section id="projects" className="w-full md:h-screen relative pt-[40px] md:pt-[20px] ">
           <h1 className='mb-10 font-serif text-5xl weight-600'>projects</h1>
-          <div className='bg-dimBlue w-100% h-80% p-[50px] rounded-[30px] md:ml-[10px]'>
+          <div className='bg-white w-100% h-80% p-[50px] rounded-[30px] md:ml-[10px]'>
           <div className='flex items-center justify-center'>
             <div className='md:grid md:grid-cols-2 gap-4 sm:gap-[130px] flex flex-col'>
               {items.map(item => (

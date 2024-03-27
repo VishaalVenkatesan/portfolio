@@ -31,7 +31,7 @@ const About = () => {
 
   return (
     <section id="about" className="w-full md:h-screen pt-[40px] md:pt-[2px]">
-      <div className="flex flex-col items-center justify-between h-full md:flex-row ">
+      <div className="flex flex-col items-center h-full md:flex-row md:justify-between">
         <div className="flex flex-col w-full px-2 md:w-1/2">
           <motion.div animate={controlsText}>
             <h1 className="font-serif text-5xl mb-7">little bit about me</h1>
@@ -63,10 +63,10 @@ const About = () => {
             alt="myPhoto"
             width={400}
             height={300}
-            className="rounded-[30px] md:ml-[100px] sm:ml-[50px] justify-between"
+            className="rounded-[30px] justify-between md:ml-[100px] ml-[20px]"
           />
         </motion.div>
-      </div>
+        </div>
     </section>
   );
 };
