@@ -8,7 +8,7 @@ module.exports = {
         secondary: "#00f6ff",
         dimWhite: "rgba(255, 255, 255, 0.7)",
         dimBlue: "black",
-        proj: "#1E0E24",
+        proj: "#020342",
       },
       fontFamily: {
         carlson : ['Carlson', 'sans-serif'],
