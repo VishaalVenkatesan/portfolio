@@ -1,17 +1,57 @@
 "use client"
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import gym from "../assets/gym.png"
 import portfolio from "../assets/portfolio.png"
 import python from "../assets/python.png"
 import express from "../assets/express.png"
 import Image from "next/image"
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const [gradient, setGradient] = useState(false); 
 
+    const titleRef = useRef(null);
+    
+useEffect(() => {
+     gsap.to(titleRef.current, {
+    duration: 1.5,
+    y: 20,
+    opacity: 0.8,
+    repeat: -1,
+    repeatRefresh: true,
+    yoyo: true,
+    ease: "power1.inOut",
+    
+  });
+  gsap.utils.toArray('.project-item').forEach((item, i) => {
+    gsap.fromTo(item, 
+      { // from
+        opacity: 0,
+        y: () => 100 * (Math.random() > 0.5 ? 1 : -1), // Randomize vertical movement
+        x: () => 100 * (Math.random() > 0.5 ? 1 : -1), // Randomize horizontal movement
+      },
+      { // to
+        scrollTrigger: {
+          trigger: item,
+          start: 'top bottom-=100',
+          end: 'bottom top',
+          scrub: 3, // Increase scrub duration for smoother animation
+        },
+        opacity: 1,
+        y: 0,
+        x: 0,
+        ease: 'power3.out', // Use an easing function for smoother animation
+        duration: 2, // Increase duration for smoother animation
+      }
+    );
+  });
+}, []);
 
   const items = [
     { id: 1, title: 'Gym Website', 
@@ -60,7 +100,9 @@ const Projects = () => {
       }
       return (
         <section id="projects" className="w-full md:h-screen relative pt-[40px] md:pt-[20px] ">
-          <h1 className='mb-10 font-serif text-5xl weight-600'>projects</h1>
+           <motion.div>
+            <h1 ref={titleRef} className="font-serif text-5xl mb-7">my projects</h1>
+            </motion.div>
           <div className='bg-proj w-100% h-80% p-[50px] rounded-[30px] md:ml-[10px]'>
           <div className='flex items-center justify-center'>
             <div className='md:grid md:grid-cols-2 gap-4 sm:gap-[130px] flex flex-col'>
@@ -71,7 +113,7 @@ const Projects = () => {
                     handleClick(item)
                   setGradient(false);
                   }}
-                  className="relative overflow-hidden transition-all duration-200 cursor-pointer"
+                  className="relative overflow-hidden transition-all duration-200 cursor-pointer project-item"
                   style={{
                      width: isMobile ? 350 : 400, 
                     height: isMobile ? 200 : 250 ,   

@@ -3,8 +3,8 @@ import { motion, useAnimation } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import vishaal from '../assets/vishaal.jpeg';
-import { useEffect } from 'react';
-
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 const About = () => {
   const controlsImage = useAnimation();
   const controlsText = useAnimation();
@@ -29,12 +29,31 @@ const About = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [controlsImage, controlsText]);
 
+  //gsap animation
+  const titleRef = useRef(null);
+
+useEffect(() => {
+  gsap.to(titleRef.current, {
+    duration: 1.5,
+    y: 20,
+    opacity: 0.8,
+    repeat: -1,
+    repeatRefresh: true,
+    yoyo: true,
+    ease: "power1.inOut",
+    
+  });
+  
+}, []);
+
   return (
     <section id="about" className="w-full md:h-screen pt-[40px] md:pt-[2px]">
       <div className="flex flex-col items-center h-full md:flex-row md:justify-between">
         <div className="flex flex-col w-full px-2 md:w-1/2">
           <motion.div animate={controlsText}>
-            <h1 className="font-serif text-5xl mb-7">little bit about me</h1>
+            <motion.div animate={controlsText}>
+            <h1 ref={titleRef} className="font-serif text-5xl mb-7">little bit about me</h1>
+            </motion.div>
             <div className='text-balance'>
               <p className="mb-4 text-2xl font-normal text-gray-700 font-lora p-[3px] leading-8">
                 Hi! I'm Vishaal Venkatesan, a 3rd-year student at Manipal University Jaipur, pursuing my

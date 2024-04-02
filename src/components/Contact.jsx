@@ -8,6 +8,7 @@ import mail from "../assets/mail.png"
 import Link from "next/link"
 import Image from "next/image"
 
+
 const Contact = () => {
   const controls = useAnimation();
   useEffect(() => {
