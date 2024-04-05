@@ -48,8 +48,8 @@ const Contact = () => {
                   <input type="text" placeholder="Last Name" name="lastname" className="w-auto p-3 border-4 border-gray-300 rounded" />
                   <input type="email" placeholder="Email" name="email" className="w-auto p-3 border-4 border-gray-300 rounded" />
                   <input type="text" placeholder="Subject" name="subject" className="w-auto p-3 border-4 border-gray-300 rounded" />
-                  <textarea placeholder="Message" name="message" className="w-full col-span-2 p-3 border-4 border-gray-300 rounded" />
-                  <button className="px-6 py-3 text-white transition duration-500 rounded-md bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-700 hover:to-blue-900">
+                  <textarea placeholder="Message" name="message" className="w-auto col-span-2 p-3 border-4 border-gray-300 rounded" />
+                  <button className="w-auto col-span-2 p-3 text-white transition duration-500 border-4 rounded-md bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-700 hover:to-blue-900">
                     Submit
                   </button>
                 </form>
