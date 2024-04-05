@@ -17,6 +17,7 @@ module.exports = {
         lora: ['Lora','serif'],
         poppins:['Poppins','sans-serif'],
         raleway:['Raleway','sans-serif'],
+        re:['Roboto Slab','serif'],
       },
     },
     screens: {

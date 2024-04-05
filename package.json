@@ -12,6 +12,7 @@
     "@supabase/supabase-js": "^2.39.7",
     "framer-motion": "^11.0.5",
     "gsap": "^3.12.5",
+    "hamburger-react": "^2.5.0",
     "next": "canary",
     "react": "^18",
     "react-dom": "^18",

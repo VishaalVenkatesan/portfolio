@@ -34,7 +34,7 @@ const Contact = () => {
         <div>
           <div className="flex flex-col gap-8 md:flex-row">
             <div className='w-full md:w-3/4'>
-              <div className='w-full h-full p-8 bg-white rounded-[30px]'>
+              <div className='w-full h-full lg:p-8 p-4 bg-white rounded-[30px]'>
                 <div className='font-serif text-4xl mb-7'>thanks for snapping a look. Let's get in touch!</div>
                 <form action="https://getform.io/f/negAA9bw" method="POST" className="flex flex-col gap-8 sm:grid-cols-2 sm:grid p-7">
                   <style jsx>{`
@@ -49,7 +49,9 @@ const Contact = () => {
                   <input type="email" placeholder="Email" name="email" className="w-auto p-3 border-4 border-gray-300 rounded" />
                   <input type="text" placeholder="Subject" name="subject" className="w-auto p-3 border-4 border-gray-300 rounded" />
                   <textarea placeholder="Message" name="message" className="w-full col-span-2 p-3 border-4 border-gray-300 rounded" />
-                  <button type="submit" className="w-full col-span-2 p-2 text-white rounded bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700">Submit</button>
+                  <button className="px-6 py-3 text-white transition duration-500 rounded-md bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-700 hover:to-blue-900">
+                    Submit
+                  </button>
                 </form>
               </div>
             </div>

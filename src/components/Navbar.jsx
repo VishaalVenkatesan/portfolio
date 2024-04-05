@@ -1,6 +1,7 @@
 "use client";
 import { motion, useScroll } from "framer-motion"
 import { useState, useEffect } from "react";
+import { Squash as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import menu from "../assets/Menu.png";
 import close from "../assets/Close.png";
@@ -102,12 +103,7 @@ const Navbar = () => {
                 </Link>
         </ul>
         <div className="z-10 flex items-center flex-1 lg:hidden">
-          <Image
-            src={toggle ? close : menu}
-            alt="menu"
-            className="w-[35px] h-[35px] object-contain cursor-pointer"
-            onClick={() => setToggle(!toggle)}
-          />
+         <Hamburger toggled={toggle} size={20} toggle={setToggle} />
           {toggle && (
             <div className="flex z-10  bg-blue-100 flex-col items-start justify-start p-6 absolute top-20 right-0 mx-4 my-2 min-w-[200px] rounded-xl shadow-lg">
               <ul className="list-none">

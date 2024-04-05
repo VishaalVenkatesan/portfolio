@@ -55,7 +55,7 @@ useEffect(() => {
             <h1 ref={titleRef} className="font-serif text-5xl mb-7">little bit about me</h1>
             </motion.div>
             <div className='text-balance'>
-              <p className="mb-4 text-2xl font-normal text-gray-700 font-lora p-[3px] leading-8">
+              <p className="mb-4 text-2xl font-normal text-gray-700 font-re p-[3px] leading-8">
                 Hi! I'm Vishaal Venkatesan, a 3rd-year student at Manipal University Jaipur, pursuing my
                 Bachelor of Technology in Computer Science. With a steadfast commitment to personal and professional growth,
                  I continuously seek out avenues to expand my 
@@ -82,7 +82,7 @@ useEffect(() => {
             alt="myPhoto"
             width={400}
             height={300}
-            className="rounded-[30px] justify-between md:ml-[100px] ml-[20px]"
+            className="rounded-[30px] justify-between md:ml-[100px] "
           />
         </motion.div>
         </div>
