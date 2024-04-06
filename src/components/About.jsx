@@ -55,7 +55,7 @@ useEffect(() => {
             <h1 ref={titleRef} className="font-serif text-5xl mb-7">little bit about me</h1>
             </motion.div>
             <div className='text-balance'>
-              <p className="mb-4 text-2xl font-normal text-gray-700 font-re p-[3px] leading-8">
+              <p className="mb-4 text-2xl font-mutuka text-black p-[3px] leading-8">
                 Hi! I'm Vishaal Venkatesan, a 3rd-year student at Manipal University Jaipur, pursuing my
                 Bachelor of Technology in Computer Science. With a steadfast commitment to personal and professional growth,
                  I continuously seek out avenues to expand my 
@@ -63,12 +63,11 @@ useEffect(() => {
                 I have a keen interest in creating aesthetically pleasing front-end web designs  with a responsive back-end. I am an enthusiastic learner, always curious
                 about how every technology I utilize in my work operates underneath.
                 </p>
-                 <p className='mb-4 text-2xl font-normal text-gray-700 font-lora p-[3px] leading-8'>
+                 <p className='mb-4 text-2xl font-normal  font-mutuka text-black  p-[3px] leading-8'>
                  Outside of my academic pursuits, I've cultivated various interests and hobbies. I've practiced karate and have a deep appreciation for Carnatic music
-                 . Additionally, I'm an avid trekker, hitting the gym regularly to maintain a healthy lifestyle. Motorsports have been a passion of mine since childhood,
-                  and I continue to enjoy them to this day.
-                  Moreover, I've honed my skills in photography, capturing moments that inspire me. 
-                 If you're interested, you can check out some of my work {" "} 
+                 . Additionally, I'm an avid trekker, hitting the gym regularly to maintain a healthy lifestyle. 
+                  Moreover, I've honored my skills in photography, capturing the moments that inspire me. 
+                 Check out some of my work {" "} 
                 <Link href="/gallery" className="text-2xl text-blue-900">
                   <u>here</u>.
                 </Link>{" "}

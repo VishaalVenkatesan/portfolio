@@ -9,6 +9,8 @@ module.exports = {
         dimWhite: "rgba(255, 255, 255, 0.7)",
         dimBlue: "black",
         proj: "#020342",
+        dgreen: "#072603",
+        dpurp: "#170426"
       },
       fontFamily: {
         carlson : ['Carlson', 'sans-serif'],

@@ -32,14 +32,14 @@ useEffect(() => {
   gsap.utils.toArray('.project-item').forEach((item, i) => {
     gsap.fromTo(item, 
       { // from
-        opacity: 0,
+        opacity: 1,
         y: () => 100 * (Math.random() > 0.5 ? 1 : -1), // Randomize vertical movement
         x: () => 100 * (Math.random() > 0.5 ? 1 : -1), // Randomize horizontal movement
       },
       { // to
         scrollTrigger: {
           trigger: item,
-          start: 'top bottom-=100',
+          start: 'top bottom-=20  ',
           end: 'bottom top',
           scrub: 3, // Increase scrub duration for smoother animation
         },
@@ -69,8 +69,8 @@ useEffect(() => {
     stack:"Python C",
     link:"https://github.com/VishaalVenkatesan/CFFI_Implementation" ,
     source: python,},
-    { id: 4, title: 'This Portfolio',
-     info: 'Looks like you are already here :), take a peak at how I make it work.',
+    { id: 4, title: 'Portfolio',
+     info: 'Looks like you are already here, take a look at the repo to see how I make it work.',
      stack:"NextJS TailwindCSS FramerMotion",
       link:"https://github.com/VishaalVenkatesan/portfolio",
     source: portfolio,},
@@ -92,7 +92,6 @@ useEffect(() => {
     };
       }, []);
       const imageStyle = {
-        border: '2px solid white',
         borderRadius: '30px',
         hover: {
           opacity: 1.0,
@@ -103,7 +102,7 @@ useEffect(() => {
            <motion.div>
             <h1 ref={titleRef} className="font-serif text-5xl mb-7">my projects</h1>
             </motion.div>
-          <div className='bg-proj w-100% h-80% p-[50px] rounded-[30px] md:ml-[10px]'>
+          <div className='bg-dpurp w-100% h-80% p-[50px] rounded-[30px] md:ml-[10px]'>
           <div className='flex items-center justify-center'>
             <div className='md:grid md:grid-cols-2 gap-4 sm:gap-[130px] flex flex-col'>
               {items.map(item => (
@@ -132,7 +131,7 @@ useEffect(() => {
             <div className="fixed inset-0 flex items-center justify-center">
                 <motion.div
                     layoutId={selectedItem.id}
-                    className={`z-20 text-2xl text-black bg-gray-200 rounded-[30px] cursor-pointer hover:bg-gray-300 p-[20px] m-[40px] ${isMobile ? 'w-[70%]' : 'w-[500px]'}`}
+                    className={`z-20 text-2xl text-white bg-black rounded-[30px]  p-[20px] m-[40px] ${isMobile ? 'w-[70%]' : 'w-[500px]'}`}
                     onClick={() => setSelectedItem(null)}
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -146,7 +145,7 @@ useEffect(() => {
                     <motion.h2 className='font-serif text-4xl md:text-5xl pb-[10px]' >{selectedItem.title}</motion.h2>
                     <motion.p className='font-popins text-[20px]'>{selectedItem.info}</motion.p>
                     <div className='flex justify-center pt-[25px]'>
-                      <motion.p className='px-4 py-2 text-xl text-center text-white bg-black rounded-full font-lora'>{selectedItem.stack}</motion.p>
+                      <motion.p className='px-4 py-2 text-xl text-center text-black bg-white rounded-full font-lora'>{selectedItem.stack}</motion.p>
                     </div>
                   </div>
                   <a href={selectedItem.link} target="_blank" rel="noopener noreferrer"
