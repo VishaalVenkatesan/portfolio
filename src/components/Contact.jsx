@@ -32,7 +32,7 @@ const Contact = () => {
     <section id="contact" className="w-full md:h-screen pt-[100px] md:pt-[200px]">
       <motion.section animate={controls}>
         <div>
-          <div className="flex flex-col gap-8 md:flex-row ">
+          <div className="flex flex-col gap-8 md:flex-row md:ml-[40px]">
             <div className='w-full md:w-3/4'>
               <div className='w-full h-full lg:p-8 p-4 bg-primary rounded-[30px]'>
                 <div className='font-serif text-4xl mb-7'>thanks for snapping a look. Let's get in touch!</div>
@@ -56,7 +56,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="w-full mt-6 md:w-1/4 md:mt-0">
-              <div className='w-full h-full p-8 bg-secondary rounded-[30px] flex flex-col justify-between'>
+              <div className='w-full h-full p-8 bg-secondary rounded-[30px] flex flex-col justify-between pl-[30px]'>
                 <div>
                   <div className="flex flex-col gap-y-[20px] text-goldtext">
                     <h1 className='text-3xl font-semibold font-lora text-pretty'>Vishaal Venkatesan.</h1>

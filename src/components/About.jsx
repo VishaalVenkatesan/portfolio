@@ -49,7 +49,7 @@ useEffect(() => {
   return (
     <section id="about" className="w-full md:h-screen pt-[40px] md:pt-[2px] text-black">
       <div className="flex flex-col items-center h-full md:flex-row md:justify-between">
-        <div className="flex flex-col w-full px-2 md:w-1/2">
+        <div className="flex flex-col w-full px-2 md:flex-row">
           <motion.div animate={controlsText}>
             <motion.div animate={controlsText}>
             <h1 ref={titleRef} className="font-serif text-5xl mb-7">little bit about me</h1>
@@ -68,7 +68,7 @@ useEffect(() => {
                  . Additionally, I'm an avid trekker, hitting the gym regularly to maintain a healthy lifestyle. 
                   Moreover, I've honored my skills in photography, capturing the moments that inspire me. 
                   </p>
-                  <div className="flex flex-row">
+                  <div className="flex flex-col sm:flex-row">
                  <p className='text-2xl font-mutuka p-[3px] antialiased pr-3'>Check out some of my work {" "} </p>
                  
                 <Button

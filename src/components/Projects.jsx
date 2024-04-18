@@ -94,9 +94,9 @@ useEffect(() => {
            <motion.div>
             <h1 ref={titleRef} className="font-serif text-5xl mb-7">my projects</h1>
             </motion.div>
-          <div className='bg-primary w-100% h-80% p-[50px] rounded-[30px] md:ml-[10px]'>
+          <div className='bg-primary w-full h-80% p-[50px] rounded-[30px] md:ml-[50px]'>
           <div className='flex items-center justify-center'>
-            <div className='md:grid md:grid-cols-2 gap-4 sm:gap-[130px] flex flex-col'>
+            <div className='md:grid md:grid-cols-2 gap-4 sm:gap-[120px] flex flex-col'>
               {items.map(item => (
                 <motion.div
                   key={item.id}
