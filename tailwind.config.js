@@ -4,13 +4,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#00040f",
-        secondary: "#00f6ff",
+        background: "#FFF2D8",
+        primary: "#EAD7BB",
+        secondary: "#113946",
+        tertiary: "#113946",
         dimWhite: "rgba(255, 255, 255, 0.7)",
         dimBlue: "black",
         proj: "#020342",
         dgreen: "#072603",
-        dpurp: "#170426"
+        dpurp: "#170426",
+        textgray: "#D3D3D3"
       },
       fontFamily: {
         carlson : ['Carlson', 'sans-serif'],

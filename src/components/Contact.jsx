@@ -29,14 +29,14 @@ const Contact = () => {
   }, [controls]);
 
   return (
-    <section id="contact" className="w-full md:h-screen pt-[100px]">
+    <section id="contact" className="w-full md:h-screen pt-[100px] md:pt-[200px]">
       <motion.section animate={controls}>
         <div>
-          <div className="flex flex-col gap-8 md:flex-row">
+          <div className="flex flex-col gap-8 md:flex-row ">
             <div className='w-full md:w-3/4'>
-              <div className='w-full h-full lg:p-8 p-4 bg-white rounded-[30px]'>
+              <div className='w-full h-full lg:p-8 p-4 bg-primary rounded-[30px]'>
                 <div className='font-serif text-4xl mb-7'>thanks for snapping a look. Let's get in touch!</div>
-                <form action="https://getform.io/f/negAA9bw" method="POST" className="flex flex-col gap-8 sm:grid-cols-2 sm:grid p-7">
+                <form action="https://getform.io/f/negAA9bw" method="POST" className="flex flex-col gap-8 sm:grid-cols-2 sm:grid p-7 ">
                   <style jsx>{`
                     ::placeholder {
                       color: gray;
@@ -44,21 +44,21 @@ const Contact = () => {
                       font-size: 1.0em;
                     }
                   `}</style>
-                  <input type="text" placeholder="First Name" name="firstname" className="w-auto p-3 border-4 border-gray-300 rounded" />
-                  <input type="text" placeholder="Last Name" name="lastname" className="w-auto p-3 border-4 border-gray-300 rounded" />
-                  <input type="email" placeholder="Email" name="email" className="w-auto p-3 border-4 border-gray-300 rounded" />
-                  <input type="text" placeholder="Subject" name="subject" className="w-auto p-3 border-4 border-gray-300 rounded" />
-                  <textarea placeholder="Message" name="message" className="w-auto col-span-2 p-3 border-4 border-gray-300 rounded" />
-                  <button className="w-auto col-span-2 p-3 text-white transition duration-500 border-4 rounded-md bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-700 hover:to-blue-900">
+                  <input type="text" placeholder="First Name" name="firstname" className="w-auto p-3 border-4 border-gray-800 rounded-[20px] bg-background" />
+                  <input type="text" placeholder="Last Name" name="lastname" className="w-auto p-3 border-4 border-gray-800 rounded-[20px] bg-background" />
+                  <input type="email" placeholder="Email" name="email" className="w-auto p-3 border-4 border-gray-800 rounded-[20px] bg-background" />
+                  <input type="text" placeholder="Subject" name="subject" className="w-auto p-3 border-4 border-gray-800 rounded-[20px] bg-background" />
+                  <textarea placeholder="Message" name="message" className="w-auto col-span-2 p-3 border-4 border-gray-800 rounded-[20px] bg-background" />
+                  <button className="w-auto col-span-2 p-3 text-gray-200 bg-secondary rounded-[20px]">
                     Submit
                   </button>
                 </form>
               </div>
             </div>
             <div className="w-full mt-6 md:w-1/4 md:mt-0">
-              <div className='w-full h-full p-8 bg-black text-white rounded-[30px] flex flex-col justify-between'>
+              <div className='w-full h-full p-8 bg-secondary rounded-[30px] flex flex-col justify-between'>
                 <div>
-                  <div className="flex flex-col gap-y-[20px]">
+                  <div className="flex flex-col gap-y-[20px] text-gray-200">
                     <h1 className='text-3xl font-semibold font-lora text-pretty'>Vishaal Venkatesan.</h1>
                     <h1 className='text-2xl font-semibold font-lora text-pretty'>Developer | Student</h1>
                     <h1 className='justify-center text-xl font-lora text-pretty'>Contact me to work together on a freelance project. <br></br> I am also available for 

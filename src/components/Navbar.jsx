@@ -3,9 +3,6 @@ import { motion, useScroll } from "framer-motion"
 import { useState, useEffect } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import Link from "next/link";
-import menu from "../assets/Menu.png";
-import close from "../assets/Close.png";
-import Image from "next/image";
 
 const Navbar = () => {
   const {  scrollYProgress  } = useScroll();
@@ -35,7 +32,7 @@ const Navbar = () => {
       left: 0,
       width: "100%",
       zIndex: 10,
-      backgroundColor: isScrolled ? "rgba(237, 235, 237, 0.75)" : 'transparent',
+      backgroundColor: isScrolled ? "#EAD7BB" : 'transparent',
       padding: "10px",
       boxShadow: isScrolled ? '0px 4px 4px rgba(0, 0, 0, 0.25)' : 'none',
       transition: 'background-color 1.5s ease, box-shadow 1.5s ease',

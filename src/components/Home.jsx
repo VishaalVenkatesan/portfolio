@@ -19,7 +19,7 @@ const Home = () => {
           />
         </div>
         <div className='md:w-[1100px] md:pt-[200px] relative'>
-          <div className="sm:hidden absolute inset-0">
+          <div className="absolute inset-0 sm:hidden">
             <Image  
               src={waves} 
               alt="waves" 

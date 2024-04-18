@@ -47,7 +47,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <section id="about" className="w-full md:h-screen pt-[40px] md:pt-[2px]">
+    <section id="about" className="w-full md:h-screen pt-[40px] md:pt-[2px] text-black">
       <div className="flex flex-col items-center h-full md:flex-row md:justify-between">
         <div className="flex flex-col w-full px-2 md:w-1/2">
           <motion.div animate={controlsText}>
@@ -55,7 +55,7 @@ useEffect(() => {
             <h1 ref={titleRef} className="font-serif text-5xl mb-7">little bit about me</h1>
             </motion.div>
             <div className='text-balance'>
-              <p className="mb-4 text-2xl font-mutuka text-black p-[3px] leading-8">
+              <p className="mb-4 text-2xl font-lora p-[3px] antialiased">
                 Hi! I'm Vishaal Venkatesan, a 3rd-year student at Manipal University Jaipur, pursuing my
                 Bachelor of Technology in Computer Science. With a steadfast commitment to personal and professional growth,
                  I continuously seek out avenues to expand my 
@@ -63,7 +63,7 @@ useEffect(() => {
                 I have a keen interest in creating aesthetically pleasing front-end web designs  with a responsive back-end. I am an enthusiastic learner, always curious
                 about how every technology I utilize in my work operates underneath.
                 </p>
-                 <p className='mb-4 text-2xl font-normal  font-mutuka text-black  p-[3px] leading-8'>
+                 <p className='mb-4 text-2xl font-lora p-[3px] antialiased'>
                  Outside of my academic pursuits, I've cultivated various interests and hobbies. I've practiced karate and have a deep appreciation for Carnatic music
                  . Additionally, I'm an avid trekker, hitting the gym regularly to maintain a healthy lifestyle. 
                   Moreover, I've honored my skills in photography, capturing the moments that inspire me. 
@@ -75,15 +75,16 @@ useEffect(() => {
             </div>
           </motion.div>
         </div>
-        <motion.div animate={controlsImage} className="w-full md:w-1/2">
-          <Image
-            src={vishaal}
-            alt="myPhoto"
-            width={400}
-            height={300}
-            className="rounded-[30px] justify-between md:ml-[100px] "
-          />
-        </motion.div>
+       <motion.div animate={controlsImage} className="w-full md:w-1/2">
+         <Image
+             src={vishaal}
+             alt="myPhoto"
+               width={400}
+             height={400}
+           className="rounded-[30px] justify-between md:ml-[100px]  border-black border-4"
+         />
+</motion.div>
+
         </div>
     </section>
   );
