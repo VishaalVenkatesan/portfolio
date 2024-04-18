@@ -8,7 +8,7 @@ import express from "../assets/express.png"
 import Image from "next/image"
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import {Link} from "@nextui-org/react";
+import {Tooltip, Button, Link} from "@nextui-org/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -98,6 +98,7 @@ useEffect(() => {
           <div className='flex items-center justify-center'>
             <div className='md:grid md:grid-cols-2 gap-4 sm:gap-[120px] flex flex-col'>
               {items.map(item => (
+               
                 <motion.div
                   key={item.id}
                   onClick={() => {

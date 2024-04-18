@@ -69,7 +69,7 @@ useEffect(() => {
                   Moreover, I've honored my skills in photography, capturing the moments that inspire me. 
                   </p>
                   <div className="flex flex-col sm:flex-row">
-                 <p className='text-2xl font-mutuka p-[3px] antialiased pr-3'>Check out some of my work {" "} </p>
+                 <p className='text-2xl font-mutuka p-[3px] antialiased pr-3'>Check out some of my work here {" "} </p>
                  
                 <Button
                  href="/gallery"
@@ -79,7 +79,7 @@ useEffect(() => {
                     variant="solid"
                     className='text-xl text-black font-mutuka bg-goldtext hover:bg-black hover:text-goldtext'
                   >
-                   Button Link
+                   GALLERY
                  </Button>{" "}
                  </div>
                 
