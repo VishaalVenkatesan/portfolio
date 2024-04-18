@@ -1,7 +1,17 @@
+const {nextui} = require("@nextui-org/react");
+
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  content: [
+    "./index.html",
+     "./src/**/*.{js,jsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+    ],
   mode: "jit",
   theme: {
+        light: {
+          layout: {}, 
+          colors: { bg: "#FFF2D8"}, 
+        },
     extend: {
       colors: {
         background: "#FFF2D8",
@@ -13,7 +23,8 @@ module.exports = {
         proj: "#020342",
         dgreen: "#072603",
         dpurp: "#170426",
-        textgray: "#D3D3D3"
+        textgray: "#D3D3D3",
+        goldtext: "#FFD700"
       },
       fontFamily: {
         carlson : ['Carlson', 'sans-serif'],
@@ -34,5 +45,5 @@ module.exports = {
       xl: "1700px",
     },
   },
-  plugins: [],
+   plugins: [nextui()],
 };

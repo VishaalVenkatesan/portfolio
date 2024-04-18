@@ -1,6 +1,6 @@
 "use client"
 import { motion, useAnimation } from 'framer-motion';
-import Link from 'next/link';
+import { Link, Button } from '@nextui-org/react';
 import Image from 'next/image';
 import vishaal from '../assets/vishaal.jpeg';
 import { useEffect, useRef } from 'react';
@@ -54,8 +54,8 @@ useEffect(() => {
             <motion.div animate={controlsText}>
             <h1 ref={titleRef} className="font-serif text-5xl mb-7">little bit about me</h1>
             </motion.div>
-            <div className='text-balance'>
-              <p className="mb-4 text-2xl font-lora p-[3px] antialiased">
+            <div className='p-4 rounded-[20px] text-balance bg-primary mb-5'>
+              <p className="mb-4 text-2xl font-mutuka p-[3px] antialiased">
                 Hi! I'm Vishaal Venkatesan, a 3rd-year student at Manipal University Jaipur, pursuing my
                 Bachelor of Technology in Computer Science. With a steadfast commitment to personal and professional growth,
                  I continuously seek out avenues to expand my 
@@ -63,15 +63,26 @@ useEffect(() => {
                 I have a keen interest in creating aesthetically pleasing front-end web designs  with a responsive back-end. I am an enthusiastic learner, always curious
                 about how every technology I utilize in my work operates underneath.
                 </p>
-                 <p className='mb-4 text-2xl font-lora p-[3px] antialiased'>
+                 <p className='mb-4 text-2xl font-mutuka p-[3px] antialiased'>
                  Outside of my academic pursuits, I've cultivated various interests and hobbies. I've practiced karate and have a deep appreciation for Carnatic music
                  . Additionally, I'm an avid trekker, hitting the gym regularly to maintain a healthy lifestyle. 
                   Moreover, I've honored my skills in photography, capturing the moments that inspire me. 
-                 Check out some of my work {" "} 
-                <Link href="/gallery" className="text-2xl text-blue-900">
-                  <u>here</u>.
-                </Link>{" "}
-                </p>
+                  </p>
+                  <div className="flex flex-row">
+                 <p className='text-2xl font-mutuka p-[3px] antialiased pr-3'>Check out some of my work {" "} </p>
+                 
+                <Button
+                 href="/gallery"
+                  as={Link}
+                  color="primary"
+                  showAnchorIcon
+                    variant="solid"
+                    className='text-xl text-black font-mutuka bg-goldtext hover:bg-black hover:text-goldtext'
+                  >
+                   Button Link
+                 </Button>{" "}
+                 </div>
+                
             </div>
           </motion.div>
         </div>

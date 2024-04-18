@@ -33,11 +33,10 @@ const Home = () => {
          onInit={(typewriter) => { 
            typewriter.typeString("Vishaal is a Software Developer based in Bengaluru. He is fueled by simplicity, ikea plants, and the world. Studying CS in MUJ.") 
              .pauseFor(500) 
-              .deleteAll() 
               .start(); 
          }} 
          options={{
-           loop: true,
+           loop: false,
          }} 
         />
       </div>

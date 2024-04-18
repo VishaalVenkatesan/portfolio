@@ -8,6 +8,7 @@ import express from "../assets/express.png"
 import Image from "next/image"
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {Link} from "@nextui-org/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,6 +36,7 @@ useEffect(() => {
     { id: 1, title: 'Podiumterics', 
     info: 'This is a website providing Formula 1 fans with a one-stop destination for legacy F1 statistics. You can find drivers, constructors, results, standings for every year since 1950.',
     stack:"NEXT | TAILWIND | NEXTUI",
+    deploy: "https://podiumetrics.vercel.app",
     link:"https://github.com/VishaalVenkatesan/Gym_Website",
     source : podiumetrics,},
     { id: 2, title: 'Social Media Agency Website', 
@@ -50,6 +52,7 @@ useEffect(() => {
     { id: 4, title: 'Portfolio',
      info: 'Looks like you are already here, take a look at the repo to see how I make it work.',
      stack:"NEXT | TAILWIND | FRAMER | GSAP",
+     deploy:"https://vishaalvenkatesan.engineer",
       link:"https://github.com/VishaalVenkatesan/portfolio",
     source: portfolio,},
   ];
@@ -109,7 +112,7 @@ useEffect(() => {
                   }}
                 >
                   <Image src={item.source} alt={item.title}  style={imageStyle} layout="responsive"/>
-                  <h2 className='pt-3 text-[16px] text-center font-mutuka'>{item.title}</h2>
+                  <h2 className='pt-3 text-2xl text-center font-mutuka'>{item.title}</h2>
                 </motion.div>
               ))}
             </div>
@@ -117,8 +120,19 @@ useEffect(() => {
           </div>
           {selectedItem && (
             <>
-            
-            <div className="fixed inset-0 flex items-center justify-center">
+          <div
+              style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              backgroundColor: 'rgba(0, 0, 0, 0.7)',
+              zIndex: 10, // Make sure the backdrop is below the selected item details
+             }}
+             onClick={() => setSelectedItem(null)} // Close the selected item details when the backdrop is clicked
+    />
+            <div className="fixed inset-0 z-20 flex items-center justify-center">
                 <motion.div
                     layoutId={selectedItem.id}
                     className={`z-20 text-2xl text-gray-200 bg-secondary rounded-[30px]  p-[20px] m-[40px] ${isMobile ? 'w-[70%]' : 'w-[500px]'}`}
@@ -133,11 +147,13 @@ useEffect(() => {
                 <div className='flex flex-col justify-between h-full pb-4'>
                     <motion.p className='font-mutuka text-[20px]'>{selectedItem.info}</motion.p>
                     <div className='flex justify-center pt-[25px]'>
-                      <motion.p className='px-4 py-2 text-xl text-center text-black bg-white rounded-full font-lora'>{selectedItem.stack}</motion.p>
+                      <motion.p className='px-4 py-2 text-xl text-center bg-black rounded-full text-goldtext font-lora'>{selectedItem.stack}</motion.p>
                     </div>
                   </div>
-                  <a href={selectedItem.link} target="_blank" rel="noopener noreferrer"
-                    className='mt-[10px] flex text-blue-500 font-serif text-[20px] justify-center items-center'>source code</a>
+                  <Link href={selectedItem.link} isExternal showAnchorIcon
+                    className='mt-[10px] flex text-white font-mutuka text-xl justify-center items-center'>Source Code</Link>
+                 {selectedItem.deploy && <Link href={selectedItem.deploy} isExternal showAnchorIcon
+                    className='mt-[10px] flex text-white font-mutuka text-xl justify-center items-center'>Deployment</Link>}
               </motion.div>
               </div>
               
