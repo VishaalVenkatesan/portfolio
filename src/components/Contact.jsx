@@ -45,8 +45,8 @@ const Contact = () => {
                     }
                   `}</style>
                   <input type="text" placeholder="First Name" name="firstname" className="w-auto p-3 border-4 border-gray-800 rounded-[20px] bg-background focus:outline-none" />
-                  <input type="text" placeholder="Subject" name="subject" className="w-auto p-3 border-4 border-gray-800 rounded-[20px] bg-background focus:outline-none" />
                   <input type="text" placeholder="Last Name" name="lastname" className="w-auto p-3 border-4 border-gray-800 rounded-[20px] bg-background focus:outline-none" />
+                  <input type="text" placeholder="Subject" name="subject" className="w-auto p-3 border-4 border-gray-800 rounded-[20px] bg-background focus:outline-none" />
                   <input type="email" placeholder="Email" name="email" className="w-auto p-3 border-4 border-gray-800 rounded-[20px] bg-background focus:outline-none" />
                   <textarea placeholder="Message" name="message" className="w-auto col-span-2 p-3 border-4 border-gray-800 rounded-[20px] bg-background focus:outline-none" />
                   <button className="w-auto col-span-2 p-3 text-goldtext font-bold bg-secondary rounded-[20px]">
