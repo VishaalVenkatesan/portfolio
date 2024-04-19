@@ -1,5 +1,5 @@
 "use client"
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import  gsap from 'gsap';
 import Image from "next/image"
@@ -18,6 +18,7 @@ const locations = ["Badami", "Gangtok", "Badami", "Sikkim", "Darjeeling", "Darje
 gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
+  const [loaded, setLoaded] = useState(Array(images.length).fill(false));
   const imageStyle = {
     borderRadius: '4%',
   }
@@ -41,7 +42,12 @@ const page = () => {
     <div className="md:pl-[80px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-[50px] gap-y-[70px] pt-[30px] md:pt-[100px]">
       {images.map((image, index) => (
         <div className="box">
-          <Image src={image} width={400} height={400}  style={imageStyle}/>
+          <Image src={image} width={400} height={400}  style={imageStyle}
+           onLoad={() => {
+            const newLoaded = [...loaded];
+            newLoaded[index] = true;
+            setLoaded(newLoaded);
+          }}/>
           <h1 className=" font-semibold text-center pt-[8px] font-mutuka">📍 {locations[index]}</h1>
           </div>
       
