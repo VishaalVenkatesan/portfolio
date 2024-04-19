@@ -112,7 +112,9 @@ useEffect(() => {
 
                   }}
                 >
-                  <Image src={item.source} alt={item.title}  style={imageStyle} layout="responsive"/>
+                  <div className="relative group">
+                <Image src={item.source} alt={item.title} style={imageStyle} layout="responsive" className="group-hover:opacity-80"/>
+                </div>  
                   <h2 className='pt-3 text-2xl text-center font-mutuka'>{item.title}</h2>
                 </motion.div>
               ))}
