@@ -146,7 +146,7 @@ useEffect(() => {
                 >
             
                 <div className='flex flex-col justify-between h-full pb-4'>
-                    <motion.p className='font-mutuka text-[20px]'>{selectedItem.info}</motion.p>
+                    <motion.p className='text-2xl font-mutuka'>{selectedItem.info}</motion.p>
                     <div className='flex justify-center pt-[25px]'>
                       <motion.p className='px-4 py-2 text-xl text-center bg-black rounded-full text-goldtext font-lora'>{selectedItem.stack}</motion.p>
                     </div>

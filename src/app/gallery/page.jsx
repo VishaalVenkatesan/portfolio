@@ -14,17 +14,18 @@ import hor8 from "../../photos/hor8.JPG"
 import hor9 from "../../photos/hor9.JPG"
 
 const images = [hor1, hor2, hor3, hor4, hor5, hor6, hor7, hor8, hor9];
+const locations = ["Badami", "Gangtok", "Badami", "Sikkim", "Darjeeling", "Darjeeling", "Bengaluru ", "Hampi", "Hampi"];
 gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
   const imageStyle = {
-    borderRadius: '10%',
+    borderRadius: '4%',
   }
     useEffect(() => {
-      window.scrollTo(0, 0);
+      window.scrollTo(0, 0);      
       const boxes = gsap.utils.toArray('.box');
       boxes.forEach(box => {
-        gsap.set(box, { x: -300, opacity: 0.5,  rotation: -1}); // Set initial position
+        gsap.set(box, { x: -30, opacity: 0.9,  rotation: -1}); // Set initial position
         gsap.to(box, { 
           x: 10,
           rotation: 0,
@@ -37,10 +38,11 @@ const page = () => {
       });
     }, []);
   return (
-    <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-[50px] gap-y-[70px] pt-[30px] md:pt-[100px]">
+    <div className="md:pl-[80px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-[50px] gap-y-[70px] pt-[30px] md:pt-[100px]">
       {images.map((image, index) => (
         <div className="box">
           <Image src={image} width={400} height={400}  style={imageStyle}/>
+          <h1 className=" font-semibold text-center pt-[8px] font-mutuka">📍 {locations[index]}</h1>
           </div>
       
       ))}
