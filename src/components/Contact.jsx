@@ -31,7 +31,7 @@ const Contact = () => {
   return (
     <section id="contact" className="w-full md:h-screen pt-[100px] md:pt-[200px]">
       <motion.section animate={controls}>
-        <div>
+        <div className='xl:mt-[200px]'>
           <div className="flex flex-col gap-8 md:flex-row md:ml-[40px]">
             <div className='w-full md:w-3/4'>
               <div className='w-full h-full lg:p-8 p-4 bg-primary rounded-[30px]'>

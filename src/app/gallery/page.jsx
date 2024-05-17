@@ -1,6 +1,8 @@
 "use client"
 import { useEffect, useState } from 'react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { Suspense } from 'react';
+import Loading from "../Loading"
 import  gsap from 'gsap';
 import Image from "next/image"
 import hor1 from "../../photos/hor1.jpeg"
@@ -39,6 +41,7 @@ const page = () => {
       });
     }, []);
   return (
+    <Suspense fallback={<Loading />}>
     <div className="md:pl-[80px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-[50px] gap-y-[70px] pt-[30px] md:pt-[100px]">
       {images.map((image, index) => (
         <div className="box">
@@ -53,6 +56,7 @@ const page = () => {
       
       ))}
     </div>
+    </Suspense>
   )
 }
 
