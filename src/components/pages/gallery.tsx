@@ -1,4 +1,5 @@
 "use client"
+
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -27,38 +28,47 @@ const images: GalleryImage[] = [
 
 export default function Gallery(): JSX.Element {
   return (
-    <section id="gallery">
+    <section id="gallery" className="w-full">
       <SectionContainer>
-    <div className="container mx-auto px-4 py-16">
-      <motion.h1 className="text-2xl font-semibold mb-4 ">
-            My Gallery
-        </motion.h1>
-      <motion.div 
-        className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1 , y: 0}}
-        transition={{ duration: 0.5 }}
-      >
-        {images.map((image, index) => (
-          <motion.div 
-            key={index}
-            className="mb-4 break-inside-avoid"
-            initial={{ opacity: 0, y: 20 }}
+        <div className="container mx-auto px-4 py-16">
+          <motion.h1 
+            className="text-2xl font-semibold mb-8 text-center"
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ scale: 1.00 }} 
+            transition={{ duration: 0.5 }}
           >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              className="rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105"
-              priority
-            />
+            My Gallery
+          </motion.h1>
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+            initial={{ opacity: 0, y: -40 }}
+            animate={{ opacity: 1 , y: 0}}
+            transition={{ duration: 0.5 }}
+          >
+            {images.map((image, index) => (
+              <motion.div
+                key={index}
+                className="w-full h-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  className="rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out"
+                  layout="responsive"
+                  width={500}
+                  height={300}
+                  objectFit="cover"
+                  priority={index < 4}
+                />
+              </motion.div>
+            ))}
           </motion.div>
-        ))}
-      </motion.div>
-    </div>
-    </SectionContainer>
+        </div>
+      </SectionContainer>
     </section>
   );
 }
