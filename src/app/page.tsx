@@ -10,7 +10,9 @@ export default function Page(){
       <Hero />
       <Experience />
       <Projects />
+      <div className="md:block hidden">
       <Gallery />
+      </div>
       <Contact />
     </div>
   )

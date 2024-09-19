@@ -23,7 +23,7 @@ const navLinks = [
   { title: "Home", href: "#home", icon: Home },
   { title: "Experience", href: "#experience", icon: Briefcase },
   { title: "Projects", href: "#projects", icon: FolderGit2 },
-  { title: "Gallery", href: "#gallery", icon: Image },
+  { title: "Gallery", href: "#gallery", icon: Image, hideOnMobile: true },
   { title: "Contact", href: "#contact", icon: PhoneCall },
 ];
 
@@ -62,14 +62,16 @@ export default function Hero() {
         <SheetContent>
           <nav className="flex flex-col space-y-4 mt-6">
             {navLinks.map((link, index) => (
-              <Link
-                key={index}
-                href={link.href}
-                className="text-lg hover:text-gray-300 transition-colors flex items-center space-x-2 hover:underline"
-              >
-                <link.icon className="w-5 h-5" />
-                <span>{link.title}</span>
-              </Link>
+              !link.hideOnMobile && (
+                <Link
+                  key={index}
+                  href={link.href}
+                  className="text-lg hover:text-gray-300 transition-colors flex items-center space-x-2 hover:underline"
+                >
+                  <link.icon className="w-5 h-5" />
+                  <span>{link.title}</span>
+                </Link>
+              )
             ))}
           </nav>
         </SheetContent>

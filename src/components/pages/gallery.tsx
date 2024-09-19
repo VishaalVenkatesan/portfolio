@@ -40,7 +40,7 @@ export default function Gallery(): JSX.Element {
             My Gallery
           </motion.h1>
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+            className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"
             initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: 1 , y: 0}}
             transition={{ duration: 0.5 }}
