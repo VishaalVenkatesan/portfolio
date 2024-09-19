@@ -1,5 +1,5 @@
 import picture1 from "./picture-1.jpeg";
-import picture2 from "./picture-2.jpg";
+import picture2 from "./picture-2.jpeg";
 import picture3 from "./picture-3.jpeg";
 import picture4 from "./picture-4.jpg";
 import picture5 from "./picture-5.jpg";
