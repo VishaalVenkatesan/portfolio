@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Boxes } from "@/components/ui/background-boxes";
 import { Linkedin, Mail, Github, Instagram, Menu, Home, Briefcase, FolderGit2, Image, PhoneCall } from "lucide-react";
 import Link from "next/link";
@@ -28,6 +28,15 @@ const navLinks = [
 ];
 
 export default function Hero() {
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    handleResize(); 
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -62,7 +71,7 @@ export default function Hero() {
         <SheetContent>
           <nav className="flex flex-col space-y-4 mt-6">
             {navLinks.map((link, index) => (
-              !link.hideOnMobile && (
+              (!link.hideOnMobile || windowWidth >= 768) && (
                 <Link
                   key={index}
                   href={link.href}
@@ -82,7 +91,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-6xl md:text-8xl font-bold mb-6 text-white"
+          className="text-6xl md:text-8xl font-bold mb-6 font-serif"
         >
           VV.
         </motion.h1>
