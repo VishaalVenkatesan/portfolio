@@ -35,8 +35,8 @@ export default function Gallery(): JSX.Element {
         </motion.h1>
       <motion.div 
         className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1 , y: 0}}
         transition={{ duration: 0.5 }}
       >
         {images.map((image, index) => (

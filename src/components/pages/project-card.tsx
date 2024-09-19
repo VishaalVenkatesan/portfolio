@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { Project } from '@/lib/types';
 
-export default function ProjectCard({ project }: { project: Project; index: number }) {
+interface ProjectCardProps {
+  project: Project;
+}
+
+export default function ProjectCard({ project }: ProjectCardProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   return (
@@ -46,13 +50,13 @@ export default function ProjectCard({ project }: { project: Project; index: numb
       </CardHeader>
       <CardContent className="p-6">
         <CardTitle className="text-2xl font-bold mb-2">{project.title}</CardTitle>
-        <CardDescription className="text-sm mb-4">
-          <div className="list-disc pl-0">
+        <div className="mb-4">
+          <ul className="list-disc pl-5">
             {project.description.map((item, idx) => (
               <li key={idx} className="text-sm">{item}</li>
             ))}
-          </div>
-        </CardDescription>
+          </ul>
+        </div>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies.map((tech, idx) => (
             <Badge key={idx} variant="secondary">{tech}</Badge>
