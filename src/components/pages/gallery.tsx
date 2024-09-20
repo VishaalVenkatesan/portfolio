@@ -41,8 +41,8 @@ export default function Gallery(): JSX.Element {
           </motion.h1>
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
-            initial={{ opacity: 0, y: -40 }}
-            animate={{ opacity: 1 , y: 0}}
+            initial={{ opacity: 0, y: -1000, x:-700}}
+            animate={{ opacity: 1 , y: 0, x:0}}
             transition={{ duration: 0.5 }}
           >
             {images.map((image, index) => (
