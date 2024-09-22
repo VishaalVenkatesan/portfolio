@@ -3,6 +3,7 @@ import Hero from "@/components/pages/hero";
 import Projects from "@/components/pages/projects";
 import Gallery from "@/components/pages/gallery";
 import Contact from "@/components/pages/contact";
+import Blog from "@/components/pages/blog";
 
 export default function Page(){
   return(
@@ -10,6 +11,7 @@ export default function Page(){
       <Hero />
       <Experience />
       <Projects />
+      <Blog />
       <div className="md:block hidden">
       <Gallery />
       </div>

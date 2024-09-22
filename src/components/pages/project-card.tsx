@@ -45,9 +45,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <motion.div
             key={currentImageIndex}
             custom={currentImageIndex}
-            initial={{ opacity: 0, x: 300 }}
+            initial={{ opacity: 0}}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -300 }}
+            exit={{ opacity: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="absolute inset-0"
             drag="x"

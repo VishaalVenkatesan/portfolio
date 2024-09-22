@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { Boxes } from "@/components/ui/background-boxes";
-import { Linkedin, Mail, Github, Instagram, Menu, Home, Briefcase, FolderGit2, Image, PhoneCall } from "lucide-react";
+
+import {  Linkedin, Mail, Github, Instagram, Menu, Home, Briefcase, FolderGit2, Image, PhoneCall, NotebookText,  ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button"
@@ -24,6 +25,7 @@ const navLinks = [
   { title: "Experience", href: "#experience", icon: Briefcase },
   { title: "Projects", href: "#projects", icon: FolderGit2 },
   { title: "Gallery", href: "#gallery", icon: Image, hideOnMobile: true },
+  { title: "Blog", href: "/blog", icon: NotebookText},
   { title: "Contact", href: "#contact", icon: PhoneCall },
 ];
 
@@ -56,7 +58,7 @@ export default function Hero() {
 
   return (
     <div className="min-h-screen w-full overflow-hidden flex flex-col items-center justify-center relative">
-      <div className="absolute inset-0 w-full h-full z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+      <div className="absolute inset-0 w-full h-full z-20  pointer-events-none" />
       <div className="md:block hidden"><Boxes /></div>
       <Sheet>
         <SheetTrigger asChild>
@@ -131,6 +133,12 @@ export default function Hero() {
               </motion.div>
             ))}
           </motion.div>
+          <Link href="/blog">
+          <Button variant="outline" className="text-sm"> 
+            <ArrowUpRight className="w-4 h-4 mr-2" />
+            my blogs
+            </Button>
+            </Link>
         </div>
       </div>
     </div>
