@@ -1,17 +1,13 @@
 "use client"
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Boxes } from "@/components/ui/background-boxes";
-
-import {  Linkedin, Mail, Github, Instagram, Menu, Home, Briefcase, FolderGit2, Image, PhoneCall, NotebookText,  ArrowUpRight } from "lucide-react";
+import NavSheet from "../global/nav-sheet";
+import {  Linkedin, Mail, Github, Instagram,  ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button"
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet"
+
 
 const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/in/vishaalvenkatesan/", label: "LinkedIn" },
@@ -20,24 +16,8 @@ const socialLinks = [
   { icon: Instagram, href: "https://www.instagram.com/vishaal_venkatesan", label: "Instagram" },
 ];
 
-const navLinks = [
-  { title: "Home", href: "#home", icon: Home },
-  { title: "Experience", href: "#experience", icon: Briefcase },
-  { title: "Projects", href: "#projects", icon: FolderGit2 },
-  { title: "Gallery", href: "#gallery", icon: Image, hideOnMobile: true },
-  { title: "Blog", href: "/blog", icon: NotebookText},
-  { title: "Contact", href: "#contact", icon: PhoneCall },
-];
 
 export default function Hero() {
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    handleResize(); 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -56,38 +36,20 @@ export default function Hero() {
     },
   };
 
+  const buttonVariants = {
+  hover: {
+    scale: 1.05,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+
   return (
     <div className="min-h-screen w-full overflow-hidden flex flex-col items-center justify-center relative">
       <div className="absolute inset-0 w-full h-full z-20  pointer-events-none" />
       <div className="md:block hidden"><Boxes /></div>
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button 
-            variant="outline" 
-            size="icon"
-            className="fixed top-4 right-4 z-50 bg-white bg-opacity-20 backdrop-blur-lg rounded-full shadow-lg hover:bg-opacity-30 transition-all duration-300"
-          >
-            <Menu className="h-6 w-6" />
-          </Button>
-        </SheetTrigger>
-        <SheetContent>
-          <nav className="flex flex-col space-y-4 mt-6">
-            {navLinks.map((link, index) => (
-              (!link.hideOnMobile || windowWidth >= 768) && (
-                <Link
-                  key={index}
-                  href={link.href}
-                  className="text-lg hover:text-gray-300 transition-colors flex items-center space-x-2 hover:underline"
-                >
-                  <link.icon className="w-5 h-5" />
-                  <span>{link.title}</span>
-                </Link>
-              )
-            ))}
-          </nav>
-        </SheetContent>
-      </Sheet>
-
+      <NavSheet />
       <div className="relative z-30 text-center px-4 md:px-10 max-w-4xl" id="home">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
@@ -134,11 +96,17 @@ export default function Hero() {
             ))}
           </motion.div>
           <Link href="/blog">
-          <Button variant="outline" className="text-sm"> 
-            <ArrowUpRight className="w-4 h-4 mr-2" />
-            my blogs
-            </Button>
-            </Link>
+            <motion.div variants={buttonVariants} whileHover="hover" 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              >
+              <Button variant="outline" className="text-sm">
+                <ArrowUpRight className="w-4 h-4 mr-2" />
+                my blogs
+              </Button>
+            </motion.div>
+          </Link>
         </div>
       </div>
     </div>

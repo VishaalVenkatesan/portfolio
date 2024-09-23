@@ -55,7 +55,6 @@ export default function Gallery(): JSX.Element {
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-full object-cover transition-all duration-300 ease-in-out"
-                  layout="responsive"
                   width={500}
                   height={300}
                   priority={index < 4}

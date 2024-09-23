@@ -18,7 +18,7 @@ import {
 import { PlusCircle, Save, Image as ImageIcon, X } from 'lucide-react'
 import { useToast } from "@/hooks/use-toast"
 import Image from 'next/image'
-import { getSignedURL } from '@/lib/s3-config'
+import { getSignedURL } from '@/db/s3-config'
 import { TiptapEditor } from './text-editor'
 
 const formSchema = z.object({
