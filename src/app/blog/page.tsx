@@ -14,7 +14,6 @@ import { ArrowRight, Calendar, Clock } from 'lucide-react'
 import Navbar from '@/components/global/Navbar'
 import { BackgroundBeams } from '@/components/ui/background-beams'
 
-
 export default function BlogPreviewPage() {
   const { data: posts, isLoading, isError } = useQuery<Post[]>({
     queryKey: ['posts'],

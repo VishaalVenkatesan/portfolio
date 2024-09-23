@@ -4,11 +4,10 @@ import { format } from 'date-fns'
 import { useQuery } from '@tanstack/react-query'
 import { getAllPosts } from "@/db/schema"
 import { Post } from '@/lib/types'
-import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { motion } from 'framer-motion'
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 
 export default function Blog() {
   const { data: posts } = useQuery<Post[]>({
@@ -41,7 +40,7 @@ export default function Blog() {
           animate="visible"
           variants={containerVariants}
         >
-            <motion.h1 className="text-2xl font-semibold mb-4 ">
+          <motion.h1 className="text-2xl font-semibold mb-4">
             my blogs
           </motion.h1>
           <motion.div 
@@ -50,7 +49,7 @@ export default function Blog() {
           >
             {(posts as Post[])?.map((post, index) => (
               <motion.div key={index} variants={itemVariants}>
-                <Card className="transition-all duration-300  shadow-lg hover:shadow-xl">
+                <Card className="transition-all duration-300 shadow-lg hover:shadow-xl h-52">
                   <CardHeader>
                     <CardTitle className="text-xl font-semibold">{post.title}</CardTitle>
                     <CardDescription>
@@ -58,15 +57,8 @@ export default function Blog() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="line-clamp-3">{post.subject}</p>
+                    <p className="line-clamp-3 overflow-hidden text-ellipsis">{post.subject}</p>
                   </CardContent>
-                  <CardFooter>
-                    <Link href={`/blog/${index + 1}`} passHref>
-                      <Button variant="link" className="transition-colors p-0">
-                        Read more <ArrowRight className="ml-2 w-4 h-4" />
-                      </Button>
-                    </Link>
-                  </CardFooter>
                 </Card>
               </motion.div>
             ))}
