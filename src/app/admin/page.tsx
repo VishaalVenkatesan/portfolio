@@ -6,10 +6,10 @@ import { useQuery } from '@tanstack/react-query'
 import { getAllPosts } from "@/db/schema"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { LogOut } from 'lucide-react'
-import { Skeleton } from '@/components/ui/skeleton'
+import { Loader2, LogOut } from 'lucide-react'
 import { PostList } from '@/components/admin/blog-lists'
 import { PostForm } from '@/components/admin/blog-form'
+import Link from 'next/link'
 
 export default function BlogManagement() {
   const handleLogout = useLogout()
@@ -36,13 +36,15 @@ export default function BlogManagement() {
     setActiveTab("posts")
   }
 
-  if (isLoading) return <div className="flex items-center justify-center h-screen"><Skeleton className='w-2/3 h-2/3'/></div>
+  if (isLoading) return <div className="flex items-center justify-center h-screen"><Loader2 className='w-6 h-6'/></div>
   if (isError) return <div className="flex items-center justify-center h-screen">Error fetching posts</div>
 
   return (
     <div className="container mx-auto p-4 max-w-6xl min-h-screen">
       <div className="flex justify-between items-center mb-8 mt-8">
-        <h1 className="text-4xl text-primary">write smthn</h1>
+        <Link href="/" className='text-4xl text-primary hover:underline'>
+          write smthn
+        </Link>
         <Button onClick={handleLogout} variant="outline" className="gap-2">
           <LogOut className="w-4 h-4" />
           Logout

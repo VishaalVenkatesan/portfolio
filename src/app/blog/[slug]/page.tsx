@@ -7,9 +7,8 @@ import { posts } from "@/db/schema"
 import { Post } from '@/lib/types'
 import { format } from 'date-fns'
 import { Card, CardContent } from "@/components/ui/card"
-import { Skeleton } from "@/components/ui/skeleton"
 import { eq } from 'drizzle-orm'
-import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ArrowLeft, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import DOMPurify from 'dompurify'
@@ -33,15 +32,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   if (isLoading) {
     return (
-      <div className="max-w-3xl mx-auto p-6 space-y-6">
-        <Skeleton className="h-10 w-64" />
-        <Skeleton className="h-80 w-full" />
-        <div className="space-y-4">
-          <Skeleton className="h-6 w-full" />
-          <Skeleton className="h-6 w-5/6" />
-          <Skeleton className="h-6 w-4/5" />
+      <>
+      <Navbar />
+      <div className="items-center justify-center flex min-h-screen">
+        <Loader2 className='w-6 h-6 animate-spin'/>
         </div>
-      </div>
+        </>
     )
   }
 
@@ -70,7 +66,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   return (
     <>
     <Navbar/>
-    <article className="max-w-3xl mx-auto p-6 min-h-screen">
+    <div className="max-w-3xl mx-auto p-6 min-h-screen">
       <Link href="/blog" className="inline-flex items-center mb-8">
         <ArrowLeft className="mr-2" size={20} />
         <span className="text-lg">Back to all posts</span>
@@ -128,7 +124,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <footer className="mt-12 text-gray-500 text-sm font-light">
         Published on {format(new Date(post.createdAt), 'MMMM dd, yyyy')}
       </footer>
-    </article>
+    </div>
     </>
   )
 }
