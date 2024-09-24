@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { createPost, updatePost } from "@/db/schema"
 import { useForm, Controller } from 'react-hook-form'
@@ -32,11 +32,11 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>
 
 
-
 export function PostForm({ post, onSuccess }: { post?: FormData; onSuccess: () => void }) {
   const queryClient = useQueryClient()
   const { toast } = useToast()
   const [imagePreviews, setImagePreviews] = useState<string[]>(post?.images || [])
+  const [lastSavedAt, setLastSavedAt] = useState<Date | null>(null)
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -67,11 +67,11 @@ export function PostForm({ post, onSuccess }: { post?: FormData; onSuccess: () =
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['posts'] })
+      setLastSavedAt(new Date())
       toast({
         title: "Success",
         description: "Post updated successfully",
       })
-      onSuccess()
     },
   })
 
@@ -82,6 +82,21 @@ export function PostForm({ post, onSuccess }: { post?: FormData; onSuccess: () =
       createPostMutation.mutate(values)
     }
   }
+
+  const autoSave = useCallback(() => {
+    const formData = form.getValues()
+    if (formData.id !== undefined) {
+      updatePostMutation.mutate(formData)
+    }
+  }, [form, updatePostMutation])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      autoSave()
+    }, 1200000) 
+
+    return () => clearInterval(interval)
+  }, [autoSave])
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || [])
