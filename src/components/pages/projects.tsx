@@ -5,7 +5,7 @@ import podiumetrics from "@/public/podiumetrics.png"
 import express from "@/public/express.png"
 import { university1, university2, university3, university4, university5, university6 } from '@/public/university-images';
 import { dashboard1, dashboard2, dashboard3, dashboard4 } from '@/public/dashboard';
-import { admin1, admin2 } from '@/public/admin';
+import { admin2 } from '@/public/admin';
 import { motion } from 'framer-motion';
 
 import { Project } from '@/lib/types';
@@ -32,7 +32,7 @@ const projects: Project[] = [
       "Implemented real-time updates and notifications for critical events.",
       "Ensured responsive design for cross-device accessibility."
     ],
-    images: [admin1, admin2],
+    images: [admin2],
     technologies: ["Next.js", "TypeScript", "JWT", "GCP", "Vercel", "Firebase"],
   },
   {
