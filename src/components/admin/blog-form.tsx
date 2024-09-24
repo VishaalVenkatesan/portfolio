@@ -36,7 +36,6 @@ export function PostForm({ post, onSuccess }: { post?: FormData; onSuccess: () =
   const queryClient = useQueryClient()
   const { toast } = useToast()
   const [imagePreviews, setImagePreviews] = useState<string[]>(post?.images || [])
-  const [lastSavedAt, setLastSavedAt] = useState<Date | null>(null)
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -67,7 +66,6 @@ export function PostForm({ post, onSuccess }: { post?: FormData; onSuccess: () =
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['posts'] })
-      setLastSavedAt(new Date())
       toast({
         title: "Success",
         description: "Post updated successfully",
