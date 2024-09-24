@@ -77,7 +77,7 @@ export default function Experience() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="list-disc list-inside space-y-2 mb-4">
+                  <ul className=" list-outside list-disc space-y-3 mb-4">
                     {exp.description.map((item, idx) => (
                       <li key={idx} className="text-sm">{item}</li>
                     ))}
