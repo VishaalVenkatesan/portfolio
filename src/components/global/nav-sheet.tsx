@@ -21,12 +21,12 @@ export default function NavSheet() {
   }, []);
 
   const navLinks = [
-    { title: "Home", href: "#home", icon: Home },
-    { title: "Experience", href: "#experience", icon: Briefcase },
-    { title: "Projects", href: "#projects", icon: FolderGit2 },
-    { title: "Gallery", href: "#gallery", icon: Image, hideOnMobile: true },
+    { title: "Home", href: "/", icon: Home },
+    { title: "Experience", href: "/#experience", icon: Briefcase },
+    { title: "Projects", href: "/#projects", icon: FolderGit2 },
+    { title: "Gallery", href: "/#gallery", icon: Image, hideOnMobile: true },
     { title: "Blog", href: "/blog", icon: NotebookText },
-    { title: "Contact", href: "#contact", icon: PhoneCall },
+    { title: "Contact", href: "/#contact", icon: PhoneCall },
   ];
 
   return (
