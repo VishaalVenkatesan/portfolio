@@ -114,12 +114,18 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       )}
-
-      <div className="prose prose-lg max-w-none mb-12">
-        {post.body.split('\n').map((paragraph, index) => (
-          <p key={index} className="mb-6 leading-relaxed" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(paragraph) }} />
-        ))}
-      </div>
+      
+          <div className="px-6 sm:px-8 pb-8">
+            <div className="prose prose-lg max-w-none mb-12 font-serif">
+              {post.body.split('\n').map((paragraph, index) => (
+                <p 
+                  key={index} 
+                  className="mb-6 leading-relaxed first-letter:capitalize first-letter:text-4xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:leading-3"
+                  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(paragraph) }} 
+                />
+              ))}
+            </div>
+          </div>
 
       <footer className="mt-12 text-gray-500 text-sm font-light">
         Published on {format(new Date(post.createdAt), 'MMMM dd, yyyy')}
