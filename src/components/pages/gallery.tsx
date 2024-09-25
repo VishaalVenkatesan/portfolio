@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import type { StaticImageData } from 'next/image';
-import { picture1, picture2, picture3, picture4, picture5, picture6, picture7, picture8, picture9, picture10, picture11 } from "@/public/gallery";
+import { picture1, picture2, picture3, picture4, picture5, picture6, picture7, picture8, picture9, picture10} from "@/public/gallery";
 import { SectionContainer } from '../global/section-container';
 
 interface GalleryImage {
@@ -22,7 +22,6 @@ const images: GalleryImage[] = [
   { src: picture8, alt: "Gallery image 8" },
   { src: picture9, alt: "Gallery image 9" },
   { src: picture10, alt: "Gallery image 10" },
-  { src: picture11, alt: "Gallery image 11" },
   { src: picture2, alt: "Gallery image 2" },
 ];
 

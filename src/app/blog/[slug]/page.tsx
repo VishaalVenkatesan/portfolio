@@ -116,11 +116,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       )}
       
           <div className="px-6 sm:px-8 pb-8">
-            <div className="prose prose-lg max-w-none mb-12 font-serif">
+            <div className="prose prose-lg max-w-none mb-12 font-serif text-lg tracking-wide">
               {post.body.split('\n').map((paragraph, index) => (
                 <p 
                   key={index} 
-                  className="mb-6 leading-relaxed first-letter:capitalize first-letter:text-4xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:leading-3"
+                  className="mb-6 leading-relaxed first-letter:capitalize first-letter:text-3xl first-letter:font-bold first-letter:mr-3  first-letter:leading-3"
                   dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(paragraph) }} 
                 />
               ))}

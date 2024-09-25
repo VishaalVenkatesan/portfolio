@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Home, Briefcase, FolderGit2, Image, PhoneCall, NotebookText, Menu } from 'lucide-react';
+import { Home, Briefcase, FolderGit2, Image, PhoneCall, NotebookText, Menu} from 'lucide-react';
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
-  SheetTitle
-} from "@/components/ui/sheet";
+} from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 
-export default function NavSheet() {
+export default function ModernNavSheet() {
   const [windowWidth, setWindowWidth] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -30,28 +30,27 @@ export default function NavSheet() {
   ];
 
   return (
-    <div className="">
-      <Sheet>
+    <div className="fixed top-4 right-4 z-50">
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
           <Button
             variant="outline"
             size="icon"
-            className="fixed top-4 right-4 z-50 bg-white bg-opacity-20 backdrop-blur-lg rounded-full shadow-lg hover:bg-opacity-30 transition-all duration-300"
+            className="rounded-full shadow-lg hover:opacity-80 transition-opacity"
           >
             <Menu className="h-6 w-6" />
           </Button>
         </SheetTrigger>
-        <SheetContent>
-          <VisuallyHidden>
-            <SheetTitle>Navigation Menu</SheetTitle>
-          </VisuallyHidden>
-          <nav className="flex flex-col space-y-4 mt-6">
+        <VisuallyHidden>
+        <SheetContent side="right" className="rounded-lg shadow-lg w-80 max-w-full">
+          <nav className="flex flex-col space-y-8 px-6 py-4 mt-10">
             {navLinks.map((link, index) => (
               (!link.hideOnMobile || windowWidth >= 768) && (
                 <Link
                   key={index}
                   href={link.href}
-                  className="text-lg hover:text-gray-300 transition-colors flex items-center space-x-2 hover:underline"
+                  className="flex items-center space-x-3 text-xl hover:opacity-80 transition-opacity hover:underline"
+                  onClick={() => setIsOpen(false)}
                 >
                   <link.icon className="w-5 h-5" />
                   <span>{link.title}</span>
@@ -60,6 +59,7 @@ export default function NavSheet() {
             ))}
           </nav>
         </SheetContent>
+        </VisuallyHidden>
       </Sheet>
     </div>
   );
