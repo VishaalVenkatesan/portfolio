@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect } from "react";
 import { Home, Briefcase, FolderGit2, Image, PhoneCall, NotebookText, Menu} from 'lucide-react';
 import {
