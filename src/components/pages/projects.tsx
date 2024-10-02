@@ -44,7 +44,7 @@ const projects: Project[] = [
     ],
     images: [podiumetrics],
     technologies: ["Next.js", "Tailwind CSS", "NextUI", "API Integration", "Firebase"],
-    liveLink: "https://www.podiumetrics.vercel.app"
+    liveLink: "https://podiumetrics.vercel.app/"
   },
   {
     title: "Express Agency Website",

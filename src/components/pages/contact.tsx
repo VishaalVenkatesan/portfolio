@@ -26,7 +26,9 @@ const formSchema = z.object({
     .string()
     .min(2, { message: "Last name must be at least 2 characters." })
     .max(30, { message: "Last name must be at most 30 characters." }),
-  phone: z.string().length(10, { message: "Phone number must be exactly 10 digits." }),
+  email: z
+    .string()
+    .email({ message: "Please enter a valid email address." }),
   subject: z
     .string()
     .min(1, { message: "Subject must be at least 5 characters." })
@@ -119,12 +121,12 @@ export default function Contact() {
                 />
                 <FormField
                   control={form.control}
-                  name="phone"
+                  name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Phone</FormLabel>
+                      <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="1234567890" {...field} />
+                        <Input type="email" placeholder="johndoe@example.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
