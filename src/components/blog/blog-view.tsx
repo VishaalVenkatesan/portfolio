@@ -38,12 +38,13 @@ export default function BlogPostClient({ post }: { post: Post }) {
 
         {post.images && post.images.length > 0 && (
           <div className="mb-12">
-            <div className="relative aspect-video overflow-hidden rounded-lg shadow-lg">
+            <div className="relative overflow-hidden rounded-lg shadow-lg">
               <Image
                 src={post.images[currentImageIndex]}
                 alt={`Blog post image ${currentImageIndex + 1}`}
-                layout="fill"
-                objectFit="cover"
+                width={1200}
+                height={800}
+                layout="responsive"
               />
               {post.images.length > 1 && (
                 <>
