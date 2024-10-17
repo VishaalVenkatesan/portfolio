@@ -40,7 +40,7 @@ export default function BlogManagement() {
   if (isError) return <div className="flex items-center justify-center h-screen">Error fetching posts</div>
 
   return (
-    <div className="container mx-auto p-4 max-w-6xl min-h-screen">
+    <div className="p-4 min-h-screen">
       <div className="flex justify-between items-center mb-8 mt-8">
         <Link href="/" className='text-4xl text-primary hover:underline'>
           write smthn

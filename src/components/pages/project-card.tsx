@@ -103,12 +103,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </CardHeader>
       <CardContent className="p-6">
         <CardTitle className="text-2xl font-bold mb-2">{project.title}</CardTitle>
-        <div className="mb-4">
-          <ul className="list-disc pl-5">
-            {project.description.map((item, idx) => (
-              <li key={idx} className="text-sm">{item}</li>
-            ))}
-          </ul>
+        <div className="mb-4 mt-4">
+            <p>{project.description}</p>
         </div>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies.map((tech, idx) => (

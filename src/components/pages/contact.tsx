@@ -79,7 +79,7 @@ export default function Contact() {
 
   return (
     <section id="contact">
-      <div className="max-w-7xl mx-auto p-8">
+      <div className=" p-8">
         <Card>
           <CardHeader>
             <CardTitle>Contact Form</CardTitle>

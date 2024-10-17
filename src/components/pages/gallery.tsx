@@ -29,7 +29,7 @@ export default function Gallery(): JSX.Element {
   return (
     <section id="gallery" className="w-full">
       <SectionContainer>
-        <div className="container mx-auto px-4 py-16">
+        <div className="px-4 py-16">
           <motion.h1
             className="text-2xl font-semibold mb-8 text-start"
             initial={{ opacity: 1, y: -20 }}

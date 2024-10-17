@@ -64,9 +64,9 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="text-2xl md:text-4xl font-serif leading-relaxed mb-8 text-white"
+          className="text-2xl md:text-4xl font-serif leading-relaxed mb-8"
         >
-          Vishaal is a Full-Stack Developer based in Bengaluru. He is fueled by simplicity, IKEA plants, and the world. Studying CS at MUJ.
+          Hi 👋🏽, I&apos;m Vishaal, a Full-Stack Developer based in Bengaluru. I&apos;m fueled by simplicity, IKEA plants, and the endless possibilities of technology. Currently studying CS at MUJ.
         </motion.p>
 
         <div className="flex flex-col justify-center items-center space-y-6 md:space-y-6 md:space-x-6 mt-8">
