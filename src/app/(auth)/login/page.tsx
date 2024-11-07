@@ -13,7 +13,7 @@ export default function LoginPage() {
 
   return (
   <div className="">
-     <Button variant="link" className="m-2">
+     <Button variant="link" className="m-2" aria-label="Home">
        <Link href="/"> <Home className="w-5 h-5"/> </Link>
       </Button>
     <div className="flex flex-col items-center justify-center min-h-screen">
@@ -49,7 +49,7 @@ export default function LoginPage() {
             </div>
           </CardContent>
           <CardFooter className="flex flex-col">
-            <Button className="w-full" type="submit" disabled={isLoading}>
+            <Button className="w-full" type="submit" disabled={isLoading} aria-label="Sign In">
               {isLoading ? 'Signing In...' : 'Sign In'}
             </Button>
           </CardFooter>

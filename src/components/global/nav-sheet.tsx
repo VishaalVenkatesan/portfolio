@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
+import ThemeToggle from "../theme/theme-toggle";
 
 export default function ModernNavSheet() {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -31,7 +32,8 @@ export default function ModernNavSheet() {
   ];
 
   return (
-    <div className="fixed top-4 right-4 z-50">
+    <div className="fixed top-4 right-4 z-50 flex flex-row gap-x-3">
+      <ThemeToggle />
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
           <Button

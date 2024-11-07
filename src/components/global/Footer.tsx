@@ -17,7 +17,7 @@ export default function Footer() {
             <div>
                 © {currentYear} All rights reserved.
             </div>
-            <Button onClick={scrollToTop} variant="link">
+            <Button onClick={scrollToTop} variant="link" aria-label="Go to top of the page">
                 <ArrowUp className="w-4 h-4" />
             </Button>
         </footer>

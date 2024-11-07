@@ -86,6 +86,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               className="ml-2"
               onClick={prevImage}
               disabled={currentImageIndex === 0}
+              aria-label="Previous image"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -95,6 +96,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               className="mr-2"
               onClick={nextImage}
               disabled={currentImageIndex === project.images.length - 1}
+              aria-label="Next image"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
@@ -114,14 +116,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </CardContent>
       <CardFooter className="flex justify-between p-6">
         {project.liveLink && (
-          <Button variant="outline" asChild>
+          <Button variant="outline" asChild 
+          aria-label='Live Demo'
+          >
             <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
               Live Demo <ExternalLink className="ml-2 h-4 w-4" />
             </a>
           </Button>
         )}
         {project.githubLink && (
-          <Button variant="outline" asChild>
+          <Button variant="outline" asChild
+          aria-label='GitHub'
+          >
             <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
               GitHub <ExternalLink className="ml-2 h-4 w-4" />
             </a>

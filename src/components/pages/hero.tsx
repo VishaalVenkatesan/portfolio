@@ -48,7 +48,7 @@ export default function Hero() {
   return (
     <div className="min-h-screen w-full overflow-hidden flex flex-col items-center justify-center relative">
       <div className="absolute inset-0 w-full h-full z-20  pointer-events-none" />
-      <div className="md:block hidden"><Boxes /></div>
+      <div className="md:block hidden light:hidden"><Boxes /></div>
       <NavSheet />
       <div className="relative z-30 text-center px-4 md:px-10 max-w-4xl" id="home">
         <motion.h1

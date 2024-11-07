@@ -21,7 +21,7 @@ const projects: Project[] = [
   },
   {
     title: "Admin Panel",
-    description: "Comprehensive admin panel with user management, RBAC, real-time updates, and responsive design for cross-device accessibility.",
+    description: "Comprehensive admin panel with user management, soil data processing for clients, auto-verifications of data and responsive design for cross-device accessibility.",
     images: [admin2],
     technologies: ["Next.js", "TypeScript", "JWT", "GCP", "Vercel", "Firebase"],
   },
