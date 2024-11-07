@@ -101,7 +101,7 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
               >
-              <Button variant="outline" className="text-sm">
+              <Button variant="outline" className="text-sm" aria-label="Open my blogs">
                 <ArrowUpRight className="w-4 h-4 mr-2" />
                 my blogs
               </Button>

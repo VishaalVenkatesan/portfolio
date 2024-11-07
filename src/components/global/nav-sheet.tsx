@@ -37,29 +37,31 @@ export default function ModernNavSheet() {
           <Button
             variant="outline"
             size="icon"
+            aria-label="Open navigation menu"
             className="rounded-full shadow-lg hover:opacity-80 transition-opacity"
           >
             <Menu className="h-6 w-6" />
           </Button>
         </SheetTrigger>
         <VisuallyHidden>
-        <SheetContent side="right" className="rounded-lg shadow-lg w-80 max-w-full">
-          <nav className="flex flex-col space-y-8 px-6 py-4 mt-10">
-            {navLinks.map((link, index) => (
-              (!link.hideOnMobile || windowWidth >= 768) && (
-                <Link
-                  key={index}
-                  href={link.href}
-                  className="flex items-center space-x-3 text-xl hover:opacity-80 transition-opacity hover:underline"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <link.icon className="w-5 h-5" />
-                  <span>{link.title}</span>
-                </Link>
-              )
-            ))}
-          </nav>
-        </SheetContent>
+          <SheetContent side="right" className="rounded-lg shadow-lg w-80 max-w-full">
+            <nav className="flex flex-col space-y-8 px-6 py-4 mt-10">
+              {navLinks.map((link, index) => (
+                (!link.hideOnMobile || windowWidth >= 768) && (
+                  <Link
+                    key={index}
+                    href={link.href}
+                    className="flex items-center space-x-3 text-xl hover:opacity-80 transition-opacity hover:underline"
+                    onClick={() => setIsOpen(false)}
+                    aria-label={link.title}
+                  >
+                    <link.icon className="w-5 h-5" />
+                    <span>{link.title}</span>
+                  </Link>
+                )
+              ))}
+            </nav>
+          </SheetContent>
         </VisuallyHidden>
       </Sheet>
     </div>
