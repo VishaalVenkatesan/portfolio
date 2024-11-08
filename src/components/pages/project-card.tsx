@@ -75,6 +75,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 backgroundColor: idx === currentImageIndex ? "#ffffff" : "#9ca3af"
               }}
               onClick={() => setCurrentImageIndex(idx)}
+              aria-label='Image selector'
             />
           ))}
         </div>
@@ -117,7 +118,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <CardFooter className="flex justify-between p-6">
         {project.liveLink && (
           <Button variant="outline" asChild 
-          aria-label='Live Demo'
+            aria-label='Live Demo'
           >
             <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
               Live Demo <ExternalLink className="ml-2 h-4 w-4" />
