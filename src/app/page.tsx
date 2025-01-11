@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Page(){
   return(
     <div className="min-h-screen">
-      <StatusBar />
+      <StatusBar />   
       <Hero />
       <Experience />
       <Projects />

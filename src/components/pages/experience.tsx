@@ -11,10 +11,24 @@ import { SectionContainer } from "../global/section-container"
 export default function Experience() {
   const experiences = [
     {
+      title: "Full Stack Developer",
+      company: "Semb AI",
+      duration: "Jan 2025 - Current",
+      location: "Singapore, SG",
+      type: "Remote",
+      description: [
+        "Contributing to the development of pilot projects, ensuring timely delivery and adherence to project requirements.",
+        "Developing and maintaining React frontend applications, integrating with Python Flask backend services.",
+        "Collaborating with cross-functional teams to enhance project outcomes and streamline workflows."
+      ],
+      skills: ["Next.js", "React.js",  "TypeScript", "Zustand", "Python",  "Flask", "Git"],
+    },
+    {
       title: "Full-Stack Developer Intern",
       company: "Neoperk",
-      duration: "Jun 2024 - Current",
-      location: "Remote",
+      duration: "Jun 2024 - Dec 2024",
+      location: "Mumbai, IN",
+      type: "Remote",
       description: [
         "Developed interactive dashboards with Next.js, D3.js, and Chart.js for agricultural insights.",
         "Implemented JWT auth, TypeScript, and modern UI components for secure, scalable UX.",
@@ -22,13 +36,14 @@ export default function Experience() {
         "Built an internal Admin Panel for efficient user and content management."
       ],
       links: [{ url: "https://neoperk.co", label: "Neoperk" }],
-      skills: ["Next.js", "D3.js", "Chart.js", "TypeScript", "JWT", "GCP", "Vercel", "Node.js", "Framer", "Zustand", "Firebase"]
+      skills: ["Next.js", "React.js", "D3.js", "Chart.js", "TypeScript", "JWT", "GCP", "Vercel", "Node.js", "Framer", "Zustand", "Firebase"]
     },
     {
       title: "Summer Intern",
       company: "Codincity",
       duration: "Jun 2023 - Aug 2023",
-      location: "Bengaluru, KA",
+      type: "Hybrid",
+      location: "Bengaluru, IN",
       description: [
         "Developed high-performance C data structures for Python integration.",
         "Led project on extending Python ecosystems with C libraries.",
@@ -36,7 +51,7 @@ export default function Experience() {
       ],
       skills: ["C", "Python", "Data Structures", "Interoperability", "CFFI"],
       links:[{url: "https://www.codincity.com/", label: "Codincity"}]
-    }
+    },
   ]
 
   const containerVariants = {
@@ -90,9 +105,14 @@ export default function Experience() {
                         {exp.company} | {exp.location}
                       </CardDescription>
                     </div>
-                    <Badge variant="secondary" className="text-sm font-semibold px-2 py-1">
-                      {exp.duration}
-                    </Badge>
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center">
+                      <Badge variant="outline" className="text-sm font-semibold px-2 py-1">
+                        {exp.type}
+                      </Badge>
+                      <Badge variant="secondary" className="text-sm font-semibold px-2 py-1">
+                        {exp.duration}
+                      </Badge>
+                    </div>
                   </div>
                 </CardHeader>
                 <CardContent className="pt-4">
